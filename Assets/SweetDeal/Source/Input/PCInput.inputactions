@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "PCInput",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "70b079ba-5cdb-4464-ae54-57ab6c63c8bb",
+            "actions": [
+                {
+                    "name": "Interaction",
+                    "type": "Button",
+                    "id": "67f88ef8-6434-4780-8dd8-b387ff8c77a1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e718face-340b-46e8-91f5-7f1fd1a6fd9a",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interaction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
