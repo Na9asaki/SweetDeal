@@ -14,8 +14,11 @@ namespace SweetDeal.Source.Loots
         private void Awake()
         {
             AddBag(_bag);
+            Fill(40);
         }
 #endif
+        
+        public IEnumerable<Bag> Bags => _bags;
 
         public void AddBag(BagScriptableObject bag)
         {

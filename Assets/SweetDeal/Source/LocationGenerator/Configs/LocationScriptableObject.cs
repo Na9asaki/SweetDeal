@@ -8,6 +8,7 @@ namespace SweetDeal.Source.LocationGenerator.Configs
         [field: SerializeField] public Room[] NoDoors { get; private set; }
         [field: SerializeField] public Room[] OneAndMoreDoors { get; private set; }
         [field: SerializeField] public Room[] Hub { get; private set; }
+        [field: SerializeField] public Room Exit {get; private set; }
         [field: SerializeField] public int Count { get; private set; }
     }
 }

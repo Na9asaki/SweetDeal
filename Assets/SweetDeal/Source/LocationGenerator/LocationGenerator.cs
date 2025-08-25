@@ -1,26 +1,38 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using SweetDeal.Source.LocationGenerator.Configs;
+using Unity.AI.Navigation;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace SweetDeal.Source.LocationGenerator
 {
     public class LocationGenerator : MonoBehaviour
     {
+        [SerializeField] private NavMeshSurface  _navMeshSurface;
+        [SerializeField] private LayerMask _layer;
+        [SerializeField] private Grid _grid;
+        [SerializeField] private float _roomRadius;
+        [SerializeField] private float _doorTreshold;
+
+        //private bool[,] _grid = new bool[100, 100];
+        private int currentX = 50;
+        private int currentY = 50;
+        
+        private List<Room> _rooms;
+        
         void GenerateHub(LocationScriptableObject locationInfo, Door mainDoor, List<Door> doors)
         {
             int hubIndex = Random.Range(0, locationInfo.Hub.Length);
             var hub = Instantiate(locationInfo.Hub[hubIndex]);
+            _grid.Fill(mainDoor.Position + mainDoor.transform.forward * _grid.CellSize / 2);
             hub.transform.forward = mainDoor.transform.forward;
             hub.transform.position = mainDoor.transform.position;
             doors.AddRange(hub.Exites);
         }
-
-        bool CanPlace(Vector3 point, float radius)
-        {
-            return !Physics.CheckSphere(point, radius);
-        }
         
-        void GenerateRoom(LocationScriptableObject locationInfo, Door door, int count, List<Door> freeDoors, List<Room> rooms)
+        bool GenerateRoom(LocationScriptableObject locationInfo, Door door, int count, List<Door> freeDoors, List<Room> rooms)
         {
             
             int roomIndex = 0;
@@ -28,23 +40,30 @@ namespace SweetDeal.Source.LocationGenerator
             if (count > freeDoors.Count)
             {
                 roomIndex = Random.Range(0, locationInfo.OneAndMoreDoors.Length);
-
-
-                var position = door.Position + door.transform.forward * locationInfo.OneAndMoreDoors[roomIndex].Radius;
-                if (!CanPlace(position, locationInfo.OneAndMoreDoors[roomIndex].Radius))
+                var pos = door.Position + door.transform.forward * _grid.CellSize / 2;
+                if (!_grid.IsFree(pos))
                 {
-                    return;
+                    Destroy(door.gameObject);
+                    return false;
+                }
+                else
+                {
+                    _grid.Fill(pos);
                 }
                 
                 room = Instantiate(locationInfo.OneAndMoreDoors[roomIndex]);
             }
             else
             {
-                
-                var position = door.Position + door.transform.forward * locationInfo.OneAndMoreDoors[roomIndex].Radius;
-                if (!CanPlace(position, locationInfo.OneAndMoreDoors[roomIndex].Radius))
+                var pos = door.Position + door.transform.forward * _grid.CellSize / 2;
+                if (!_grid.IsFree(pos))
                 {
-                    return;
+                    Destroy(door.gameObject);
+                    return false;
+                }
+                else
+                {
+                    _grid.Fill(pos);
                 }
                 
                 roomIndex = Random.Range(0, locationInfo.NoDoors.Length);
@@ -59,10 +78,25 @@ namespace SweetDeal.Source.LocationGenerator
                 
             Destroy(door.gameObject);
             room.Entry.Activate();
+            return true;
+        }
+
+        void GenerateExit(LocationScriptableObject locationInfo, Door door)
+        {
+            var exit = Instantiate(locationInfo.Exit);
+            exit.transform.forward = door.transform.forward;
+            exit.transform.position = door.transform.position;
+        }
+
+        void GenerateNavigation()
+        {
+            _navMeshSurface.BuildNavMesh();
         }
         
         public void Generate(LocationScriptableObject locationInfo, Door mainDoor)
         {
+            _grid.Init();
+            
             List<Door> freeDoors = new List<Door>();
             List<Room> freeRooms = new List<Room>();
             int count = locationInfo.Count;
@@ -74,21 +108,38 @@ namespace SweetDeal.Source.LocationGenerator
                 int nextDoor = Random.Range(0, freeDoors.Count);
                 Door door =  freeDoors[nextDoor];
                 freeDoors.RemoveAt(nextDoor);
-            
-                GenerateRoom(locationInfo, door, count, freeDoors, freeRooms);
+                if (GenerateRoom(locationInfo, door, count, freeDoors, freeRooms))
+                {
+                    count--;
+                }
 
-                count--;
+                if (freeDoors.Count == 1 || count == 1)
+                {
+                    nextDoor = Random.Range(0, freeDoors.Count);
+                    door =  freeDoors[nextDoor];
+                    GenerateExit(locationInfo, door);
+                    break;
+                }
             }
 
             foreach (var room in freeRooms)
             {
                 room.GenerateLoot();
+                room.GenerateEnemies();
             }
-            
+            _rooms = freeRooms;
             freeDoors.Clear();
-            freeRooms.Clear();
 
-            
+            GenerateNavigation();
+        }
+
+        public void Restart()
+        {
+            if (_rooms == null) return;
+            foreach (var room in _rooms)
+            {
+                Destroy(room.gameObject);
+            }
         }
     }
 }

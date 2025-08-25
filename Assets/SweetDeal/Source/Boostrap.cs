@@ -1,4 +1,5 @@
-﻿using SweetDeal.Source.LocationGenerator;
+﻿using System;
+using SweetDeal.Source.LocationGenerator;
 using SweetDeal.Source.LocationGenerator.Configs;
 using SweetDeal.Source.Player;
 using UnityEngine;
@@ -18,11 +19,20 @@ namespace SweetDeal.Source
         {
             _input = new PCInput();
             _playerController.Init(_input);
-            _locationGenerator.Generate(_locationScriptableObject, _startDoor);
+            
         }
 
         private void Start()
         {
+            Run();
+        }
+
+        private void Run()
+        {
+            _locationGenerator.Restart();
+            
+            _locationGenerator.Generate(_locationScriptableObject, _startDoor);
+
             _input.Enable();
             _playerController.Activate();
         }

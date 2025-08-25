@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Depth_1
   m_EditorClassIdentifier: 
   <NoDoors>k__BackingField:
-  - {fileID: 2689187744509989751, guid: 41a014ca7f9c1d34ca4eba9f10fb0688, type: 3}
   - {fileID: 7753957356948820817, guid: 40d30ac5e531bb8429389120f24423cd, type: 3}
   <OneAndMoreDoors>k__BackingField:
-  - {fileID: 4245251518788357596, guid: 4a8037f4b4c9a384bb25ee7c3b33da70, type: 3}
+  - {fileID: 2689187744509989751, guid: 41a014ca7f9c1d34ca4eba9f10fb0688, type: 3}
   <Hub>k__BackingField:
   - {fileID: 3392400965831509794, guid: 679a1b8abe9242140a40b97c7c8f79c8, type: 3}
-  <Count>k__BackingField: 5
+  <Exit>k__BackingField: {fileID: 2322977937945331416, guid: ff67be2c8916b4f47aac1b8a9fd2e485, type: 3}
+  <Count>k__BackingField: 100

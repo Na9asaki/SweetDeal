@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace SweetDeal.Source.LocationGenerator
 {
@@ -22,5 +23,6 @@ namespace SweetDeal.Source.LocationGenerator
             else 
                 Debug.Log("Close");
         }
+
     }
 }

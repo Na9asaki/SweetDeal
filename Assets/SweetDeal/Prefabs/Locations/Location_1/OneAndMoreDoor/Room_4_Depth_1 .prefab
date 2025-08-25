@@ -11430,7 +11430,7 @@ MonoBehaviour:
   - {fileID: 7424356736372615410}
   _entry: {fileID: 1240239894987605751}
   _center: {fileID: 3826557099674833755}
-  <Radius>k__BackingField: 18
+  <Radius>k__BackingField: 20
 --- !u!1 &3646612791410607356
 GameObject:
   m_ObjectHideFlags: 0
