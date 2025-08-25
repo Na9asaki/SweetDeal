@@ -7,7 +7,7 @@ namespace SweetDeal.Source.LocationGenerator
     {
         [field: SerializeField] public Vector3 StartCorner {get; private set;}
         [field: SerializeField] public Vector3 EndCorner {get; private set;}
-        [feidl: SerializeField] public float CellSize { get; private set; } = 40;
+        [field: SerializeField] public float CellSize { get; private set; } = 40;
         
         private bool[,] _grid;
 

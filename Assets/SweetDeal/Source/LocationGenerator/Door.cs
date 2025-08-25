@@ -1,11 +1,15 @@
 ﻿using System;
+using SweetDeal.Source.Loots;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace SweetDeal.Source.LocationGenerator
 {
-    public class Door : MonoBehaviour
+    public class Door : Interaction
     {
         [SerializeField] private bool _canOpen;
+
+        public UnityEvent onOpen;
         
         public bool CanOpen => _canOpen;
         
@@ -16,13 +20,10 @@ namespace SweetDeal.Source.LocationGenerator
             _canOpen = true;
         }
 
-        public void Open()
+        protected override void InteractWith()
         {
             if (_canOpen)
-                Debug.Log("Open");
-            else 
-                Debug.Log("Close");
+                onOpen?.Invoke();
         }
-
     }
 }

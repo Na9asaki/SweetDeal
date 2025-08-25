@@ -1,6 +1,5 @@
-﻿using System;
+﻿using SweetDeal.Source.GameplaySystems;
 using SweetDeal.Source.LocationGenerator;
-using SweetDeal.Source.LocationGenerator.Configs;
 using SweetDeal.Source.Player;
 using UnityEngine;
 
@@ -11,15 +10,16 @@ namespace SweetDeal.Source
         [SerializeField] private PlayerController  _playerController;
         [SerializeField] private LocationGenerator.LocationGenerator _locationGenerator;
         [SerializeField] private Door _startDoor;
-        [SerializeField] private LocationScriptableObject  _locationScriptableObject;
+        [SerializeField] private DepthLevel _depthLevel;
         
         private PCInput _input;
+        private Vector3 _spawnPoint;
 
         private void Awake()
         {
             _input = new PCInput();
             _playerController.Init(_input);
-            
+            _spawnPoint = _playerController.transform.position;
         }
 
         private void Start()
@@ -29,12 +29,23 @@ namespace SweetDeal.Source
 
         private void Run()
         {
+            var definition = _depthLevel.GetLocationDefinition();
+            
             _locationGenerator.Restart();
             
-            _locationGenerator.Generate(_locationScriptableObject, _startDoor);
+            _locationGenerator.Generate(definition, _startDoor);
 
             _input.Enable();
             _playerController.Activate();
+        }
+
+        public void Restart()
+        {
+            _depthLevel.UpdateValue();
+            _playerController.GetComponent<CharacterController>().enabled = false;
+            _playerController.transform.position = _spawnPoint;
+            _playerController.GetComponent<CharacterController>().enabled = true;
+            Run();
         }
 
         private void OnDestroy()

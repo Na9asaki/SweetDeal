@@ -1,43 +1,24 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SweetDeal.Source.Loots
 {
     public class LootProvider : MonoBehaviour
     {
         [SerializeField] private Cargo _cargo;
-        private Loot _current;
-        
-        public void Init(PCInput input)
-        {
-            input.Player.Interaction.started += (ctx) => Interact();
-        }
 
         private void OnEnable()
         {
-            Loot.OnLootCollected += Enter;
+            Loot.OnLootCollected += Supply;
         }
 
         private void OnDisable()
         {
-            Loot.OnLootCollected -= Enter;
+            Loot.OnLootCollected -= Supply;
         }
 
-        private void Interact()
+        private void Supply(Loot loot)
         {
-            _cargo.Fill(_current.Collect());
-        }
-
-        private void Enter(Loot loot)
-        {
-            _current = loot;
-            _current.OnLootExited += Exit;
-        }
-
-        private void Exit()
-        {
-            _current.OnLootExited -= Exit;
-            _current = null;
+            _cargo.Fill(loot.Amount);
         }
     }
 }

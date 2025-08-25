@@ -15,12 +15,8 @@ namespace SweetDeal.Source.LocationGenerator
         [SerializeField] private Grid _grid;
         [SerializeField] private float _roomRadius;
         [SerializeField] private float _doorTreshold;
-
-        //private bool[,] _grid = new bool[100, 100];
-        private int currentX = 50;
-        private int currentY = 50;
         
-        private List<Room> _rooms;
+        private List<Room> _rooms =  new List<Room>();
         
         void GenerateHub(LocationScriptableObject locationInfo, Door mainDoor, List<Door> doors)
         {
@@ -30,6 +26,7 @@ namespace SweetDeal.Source.LocationGenerator
             hub.transform.forward = mainDoor.transform.forward;
             hub.transform.position = mainDoor.transform.position;
             doors.AddRange(hub.Exites);
+            _rooms.Add(hub);
         }
         
         bool GenerateRoom(LocationScriptableObject locationInfo, Door door, int count, List<Door> freeDoors, List<Room> rooms)
@@ -86,6 +83,9 @@ namespace SweetDeal.Source.LocationGenerator
             var exit = Instantiate(locationInfo.Exit);
             exit.transform.forward = door.transform.forward;
             exit.transform.position = door.transform.position;
+            exit.Entry.Activate();
+            Destroy(door.gameObject);
+            _rooms.Add(exit);
         }
 
         void GenerateNavigation()
@@ -98,7 +98,6 @@ namespace SweetDeal.Source.LocationGenerator
             _grid.Init();
             
             List<Door> freeDoors = new List<Door>();
-            List<Room> freeRooms = new List<Room>();
             int count = locationInfo.Count;
             
             GenerateHub(locationInfo, mainDoor, freeDoors);
@@ -108,7 +107,7 @@ namespace SweetDeal.Source.LocationGenerator
                 int nextDoor = Random.Range(0, freeDoors.Count);
                 Door door =  freeDoors[nextDoor];
                 freeDoors.RemoveAt(nextDoor);
-                if (GenerateRoom(locationInfo, door, count, freeDoors, freeRooms))
+                if (GenerateRoom(locationInfo, door, count, freeDoors, _rooms))
                 {
                     count--;
                 }
@@ -122,12 +121,11 @@ namespace SweetDeal.Source.LocationGenerator
                 }
             }
 
-            foreach (var room in freeRooms)
+            foreach (var room in _rooms)
             {
                 room.GenerateLoot();
                 room.GenerateEnemies();
             }
-            _rooms = freeRooms;
             freeDoors.Clear();
 
             GenerateNavigation();

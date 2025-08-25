@@ -3,33 +3,15 @@ using UnityEngine;
 
 namespace SweetDeal.Source.Loots
 {
-    public class Loot : MonoBehaviour
+    public class Loot : Interaction
     {
-        [SerializeField] private int _amount;
-        
+        [SerializeField] private int amount;
+        public int Amount => amount;
         public static event Action<Loot> OnLootCollected;
-        
-        public event Action OnLootEntered;
-        public event Action OnLootExited;
-        
-        private bool _activated;
 
-        public int Collect()
-        {
-            GetComponent<Collider>().enabled = false;
-            OnLootExited?.Invoke();
-            return _amount;
-        }
-
-        private void OnTriggerEnter(Collider other)
+        protected override void InteractWith()
         {
             OnLootCollected?.Invoke(this);
-            OnLootEntered?.Invoke();
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            OnLootExited?.Invoke();
         }
     }
 }

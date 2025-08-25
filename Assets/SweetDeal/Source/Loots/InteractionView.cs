@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace SweetDeal.Source.Loots
 {
-    [RequireComponent(typeof(Loot))]
+    [RequireComponent(typeof(Interaction))]
     public class InteractionView : MonoBehaviour
     {
         [SerializeField] private GameObject _view;
 
-        private Loot _loot;
+        private Interaction _loot;
 
         private bool _activated;
         private Camera _camera;
@@ -17,7 +17,7 @@ namespace SweetDeal.Source.Loots
         private void Awake()
         {
             _camera = Camera.main;
-            _loot = GetComponent<Loot>();
+            _loot = GetComponent<Interaction>();
         }
 
         private void OnEnable()

@@ -8,11 +8,11 @@ namespace SweetDeal.Source.Player
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private ThirdPersonController  _thirdPersonController;
-        [SerializeField] private LootProvider _lootProvider;
+        [SerializeField] private PlayerInteraction _playerInteraction;
 
         public void Init(PCInput input)
         {
-            _lootProvider.Init(input);
+            _playerInteraction.Init(input);
         }
         
         public void Activate()
