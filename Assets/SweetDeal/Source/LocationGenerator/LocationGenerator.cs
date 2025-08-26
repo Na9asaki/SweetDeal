@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using SweetDeal.Source.LocationGenerator.Configs;
 using Unity.AI.Navigation;
 using UnityEngine;
@@ -12,6 +10,7 @@ namespace SweetDeal.Source.LocationGenerator
     {
         [SerializeField] private NavMeshSurface  _navMeshSurface;
         [SerializeField] private LayerMask _layer;
+        [SerializeField] private GeneratedLootDefinition _generatedLootDefinitions;
         [SerializeField] private Grid _grid;
         [SerializeField] private float _roomRadius;
         [SerializeField] private float _doorTreshold;
@@ -123,7 +122,7 @@ namespace SweetDeal.Source.LocationGenerator
 
             foreach (var room in _rooms)
             {
-                room.GenerateLoot();
+                room.GenerateLoot(_generatedLootDefinitions);
                 room.GenerateEnemies();
             }
             freeDoors.Clear();

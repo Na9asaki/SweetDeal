@@ -7,6 +7,7 @@ namespace SweetDeal.Source.GameplaySystems
         public static void Save<T>(T data, string key)
         {
             var jsonData = JsonUtility.ToJson(data);
+            Debug.Log(jsonData);
             PlayerPrefs.SetString(key, jsonData);
             PlayerPrefs.Save();
         }

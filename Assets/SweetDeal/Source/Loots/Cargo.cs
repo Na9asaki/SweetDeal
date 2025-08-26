@@ -41,5 +41,35 @@ namespace SweetDeal.Source.Loots
                 }
             }
         }
+
+        public bool Spend(int amount)
+        {
+            int have = 0;
+            foreach (var bag in _bags)
+            {
+                have += bag.Count;
+            }
+
+            if (have < amount)
+            {
+                return false;
+            }
+            
+            foreach (var bag in _bags)
+            {
+                if (bag.Count >= amount)
+                {
+                    bag.AddCookie(-amount);
+                    break;
+                }
+                else
+                {
+                    bag.AddCookie(-bag.Count);
+                    amount -= bag.Count;
+                }
+            }
+
+            return true;
+        }
     }
 }

@@ -100,6 +100,24 @@ public partial class @PCInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""InventoryChoose"",
+                    ""type"": ""Button"",
+                    ""id"": ""9ab9a23e-dec3-4762-803c-f11f27ee2551"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Gadget"",
+                    ""type"": ""Button"",
+                    ""id"": ""42d37cc1-4eeb-41bc-b5c2-60580876642d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -113,6 +131,28 @@ public partial class @PCInput: IInputActionCollection2, IDisposable
                     ""action"": ""Interaction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d3261c76-b823-4126-bb85-d8bd319c3a3d"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""InventoryChoose"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6faab10a-1a7f-4aa8-8e05-aa051454383b"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Gadget"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -122,6 +162,8 @@ public partial class @PCInput: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Interaction = m_Player.FindAction("Interaction", throwIfNotFound: true);
+        m_Player_InventoryChoose = m_Player.FindAction("InventoryChoose", throwIfNotFound: true);
+        m_Player_Gadget = m_Player.FindAction("Gadget", throwIfNotFound: true);
     }
 
     ~@PCInput()
@@ -203,6 +245,8 @@ public partial class @PCInput: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Interaction;
+    private readonly InputAction m_Player_InventoryChoose;
+    private readonly InputAction m_Player_Gadget;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -218,6 +262,14 @@ public partial class @PCInput: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Interaction".
         /// </summary>
         public InputAction @Interaction => m_Wrapper.m_Player_Interaction;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/InventoryChoose".
+        /// </summary>
+        public InputAction @InventoryChoose => m_Wrapper.m_Player_InventoryChoose;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Gadget".
+        /// </summary>
+        public InputAction @Gadget => m_Wrapper.m_Player_Gadget;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -247,6 +299,12 @@ public partial class @PCInput: IInputActionCollection2, IDisposable
             @Interaction.started += instance.OnInteraction;
             @Interaction.performed += instance.OnInteraction;
             @Interaction.canceled += instance.OnInteraction;
+            @InventoryChoose.started += instance.OnInventoryChoose;
+            @InventoryChoose.performed += instance.OnInventoryChoose;
+            @InventoryChoose.canceled += instance.OnInventoryChoose;
+            @Gadget.started += instance.OnGadget;
+            @Gadget.performed += instance.OnGadget;
+            @Gadget.canceled += instance.OnGadget;
         }
 
         /// <summary>
@@ -261,6 +319,12 @@ public partial class @PCInput: IInputActionCollection2, IDisposable
             @Interaction.started -= instance.OnInteraction;
             @Interaction.performed -= instance.OnInteraction;
             @Interaction.canceled -= instance.OnInteraction;
+            @InventoryChoose.started -= instance.OnInventoryChoose;
+            @InventoryChoose.performed -= instance.OnInventoryChoose;
+            @InventoryChoose.canceled -= instance.OnInventoryChoose;
+            @Gadget.started -= instance.OnGadget;
+            @Gadget.performed -= instance.OnGadget;
+            @Gadget.canceled -= instance.OnGadget;
         }
 
         /// <summary>
@@ -308,5 +372,19 @@ public partial class @PCInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnInteraction(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "InventoryChoose" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnInventoryChoose(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Gadget" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnGadget(InputAction.CallbackContext context);
     }
 }

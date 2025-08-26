@@ -1,4 +1,5 @@
-﻿using SweetDeal.Source.GameplaySystems;
+﻿using SweetDeal.Source.Gadgets.Inventory;
+using SweetDeal.Source.GameplaySystems;
 using SweetDeal.Source.LocationGenerator;
 using SweetDeal.Source.Player;
 using UnityEngine;
@@ -12,13 +13,18 @@ namespace SweetDeal.Source
         [SerializeField] private Door _startDoor;
         [SerializeField] private DepthLevel _depthLevel;
         
+        [SerializeField] private ToolsController _toolsController;
+        
         private PCInput _input;
         private Vector3 _spawnPoint;
+        
+        public DepthLevel DepthLevel => _depthLevel;
 
         private void Awake()
         {
             _input = new PCInput();
             _playerController.Init(_input);
+            _toolsController.Init(_input);
             _spawnPoint = _playerController.transform.position;
         }
 
