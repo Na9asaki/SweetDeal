@@ -15,9 +15,63 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638918001340752649
+  lastModified: 638918013346867639
   FileSizes: []
   Exists: 1
+--- !u!114 &-1619350150099299672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/amb/2D/amb_dungeon
+  m_EditorClassIdentifier: 
+  Path: event:/amb/2D/amb_dungeon
+  Guid:
+    Data1: 848151157
+    Data2: 1124277981
+    Data3: -1680823906
+    Data4: -950090297
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4200
+--- !u!114 &-137969033169981523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/amb/3D/amb_torch
+  m_EditorClassIdentifier: 
+  Path: event:/amb/3D/amb_torch
+  Guid:
+    Data1: -560220258
+    Data2: 1311147392
+    Data3: -1265529
+    Data4: 1892391432
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11888
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34,14 +88,15 @@ MonoBehaviour:
   - {fileID: 3947635370847002615}
   - {fileID: -6251912829148813130}
   EditorEvents:
-  - {fileID: 5619907851516606678}
+  - {fileID: -1619350150099299672}
+  - {fileID: -137969033169981523}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6251912829148813130}
   StringsBanks:
   - {fileID: 3947635370847002615}
   cacheVersion: 131847
-  cacheTime: 638918001340761107
+  cacheTime: 638918013346883554
   SerializableEventsDict:
   - key: event:/amb/amb_dungeon
     index: 0
@@ -60,35 +115,8 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638918001340761107
+  lastModified: 638918013346883554
   FileSizes:
   - Name: 
-    Value: 776
+    Value: 834
   Exists: 1
---- !u!114 &5619907851516606678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/amb/amb_dungeon
-  m_EditorClassIdentifier: 
-  Path: event:/amb/amb_dungeon
-  Guid:
-    Data1: 848151157
-    Data2: 1124277981
-    Data3: -1680823906
-    Data4: -950090297
-  Banks:
-  - {fileID: -6251912829148813130}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 4200
