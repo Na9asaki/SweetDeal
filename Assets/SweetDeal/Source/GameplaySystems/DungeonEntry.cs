@@ -46,7 +46,7 @@ namespace SweetDeal.Source.GameplaySystems
                     data2.EquipmentNameAmountData.Add(new EquipmentNameAmountData()
                     {
                         Amount = gadget.UseNumbers,
-                        Name = gadget.GetType().Name
+                        Name = gadget.Name
                     });
             }
             DataKeeper.Save(data2, STRING_KEYS_CONSTRAINTS.EquipmentKey);

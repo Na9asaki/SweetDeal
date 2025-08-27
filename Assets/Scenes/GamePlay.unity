@@ -132,6 +132,8 @@ GameObject:
   - component: {fileID: 163625081}
   - component: {fileID: 163625082}
   - component: {fileID: 163625083}
+  - component: {fileID: 163625084}
+  - component: {fileID: 163625085}
   m_Layer: 0
   m_Name: Boostrap
   m_TagString: Untagged
@@ -170,6 +172,7 @@ MonoBehaviour:
   _locationGenerator: {fileID: 163625081}
   _startDoor: {fileID: 1483855019}
   _depthLevel: {fileID: 163625083}
+  _dataEntryPoint: {fileID: 163625084}
   _toolsController: {fileID: 468517376}
 --- !u!114 &163625081
 MonoBehaviour:
@@ -220,6 +223,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationsDefinitions:
   - {fileID: 11400000, guid: c25ecab037c9b5242a1d841a42f9bbaf, type: 2}
+--- !u!114 &163625084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163625078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7182488931941ac892eabe4608befd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bag: {fileID: 11400000, guid: be3c6fa2d7a88974f920f5ff5af57dc1, type: 2}
+--- !u!114 &163625085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163625078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a656cdc6f4423ebf3d07a75b150031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grenade: {fileID: 11400000, guid: 2316fce5127f6d248948712d76a7cad2, type: 2}
+  oil: {fileID: 11400000, guid: d850cd1dd5ed67046b6d3dc439131b7a, type: 2}
+  player: {fileID: 998491811}
+  spawnPoint: {fileID: 1650318289}
 --- !u!1 &286706451
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,15 +387,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1293029876712600392, guid: 2553cec8fdb3eb643bbe9f2ec880c472, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.42548
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 1293029876712600392, guid: 2553cec8fdb3eb643bbe9f2ec880c472, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.42548
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 1293029876712600392, guid: 2553cec8fdb3eb643bbe9f2ec880c472, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.42548
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 1293029876712600392, guid: 2553cec8fdb3eb643bbe9f2ec880c472, type: 3}
       propertyPath: m_LocalPosition.x
@@ -813,16 +845,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc7518a6c35456ab6ac68c43709c13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _toolsBar: {fileID: 468517378}
-  throwForce: 15
-  throwHeight: 0.2
-  spawnPoint: {fileID: 1650318289}
-  player: {fileID: 998491811}
-  grenadeProjectile: {fileID: 1026852932564763207, guid: 2b97696fb6bb25148a6eb5ac0c5e645b, type: 3}
-  jarOil: {fileID: 6489032464428973262, guid: 971de39811217df4ba417607d60ef406, type: 3}
-  definitions:
-  - {fileID: 11400000, guid: 2316fce5127f6d248948712d76a7cad2, type: 2}
-  - {fileID: 11400000, guid: d850cd1dd5ed67046b6d3dc439131b7a, type: 2}
 --- !u!1 &539187821
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,6 +909,9 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 128
+  onEmit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &803118462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,6 +1131,9 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 128
+  onEmit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &918270008
 Transform:
   m_ObjectHideFlags: 0
@@ -1730,7 +1758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5650351
+      value: 1.87375
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1907,7 +1935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5650351
+      value: 1.87375
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: m_LocalPosition.z

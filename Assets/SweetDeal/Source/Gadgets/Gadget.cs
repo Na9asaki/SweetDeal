@@ -10,6 +10,7 @@ namespace SweetDeal.Source.Gadgets
         [field: SerializeField] public int UseNumbers { get; protected set; }
 
         public event Action OnEmpty;
+        public string Name;
         
         public bool IsEmpty => UseNumbers == 0;
         public GadgetDefinition Definition { get; protected set; }
@@ -18,6 +19,7 @@ namespace SweetDeal.Source.Gadgets
         {
             UseNumbers = useNumbers;
             Definition = definition;
+            Name = definition.Name;
         }
         
         public abstract void Use();

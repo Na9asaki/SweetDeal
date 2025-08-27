@@ -13,13 +13,12 @@ namespace SweetDeal.Source.Gadgets
 
         private Camera _camera = Camera.main;
 
-        public FuneralGrenade(GrenadeProjectile grenadeProjectile, Transform spawnPoint, float throwHeight, 
-            float throwForce, int useNumbers, GadgetDefinition definition) :  base(useNumbers, definition)
+        public FuneralGrenade(Transform spawnPoint, int useNumbers, GadgetDefinition definition) :  base(useNumbers, definition)
         {
-            _grenadeProjectile = grenadeProjectile;
+            _grenadeProjectile = definition.Projectile as GrenadeProjectile;
             _spawnPoint = spawnPoint;
-            _throwHeight = throwHeight;
-            _throwForce = throwForce;
+            _throwHeight = definition.ThrowHeight;
+            _throwForce = definition.ThrowForce;
         }
 
         public override void Use()

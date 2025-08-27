@@ -12,13 +12,12 @@ namespace SweetDeal.Source.Gadgets
 
         private Transform _player;
 
-        public Oil(JarOil oil, Transform spawnPoint, float throwHeight, float throwForce,
-            Transform player, int useNumbers, GadgetDefinition definition) : base(useNumbers, definition)
+        public Oil(Transform spawnPoint, Transform player, int useNumbers, GadgetDefinition definition) : base(useNumbers, definition)
         {
-            _oilProjectile = oil;
+            _oilProjectile = definition.Projectile as JarOil;
             _spawnPoint = spawnPoint;
-            _throwHeight = throwHeight;
-            _throwForce = throwForce;
+            _throwHeight = definition.ThrowHeight;
+            _throwForce = definition.ThrowForce;
             _player = player;
         }
         

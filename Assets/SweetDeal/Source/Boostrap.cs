@@ -12,6 +12,7 @@ namespace SweetDeal.Source
         [SerializeField] private LocationGenerator.LocationGenerator _locationGenerator;
         [SerializeField] private Door _startDoor;
         [SerializeField] private DepthLevel _depthLevel;
+        [SerializeField] private DataEntryPoint _dataEntryPoint;
         
         [SerializeField] private ToolsController _toolsController;
         
@@ -26,6 +27,8 @@ namespace SweetDeal.Source
             _playerController.Init(_input);
             _toolsController.Init(_input);
             _spawnPoint = _playerController.transform.position;
+            
+            _dataEntryPoint.Load();
         }
 
         private void Start()
