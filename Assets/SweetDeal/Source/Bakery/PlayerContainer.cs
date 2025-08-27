@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using SweetDeal.Source.GameplaySystems;
 using UnityEngine;
 
@@ -37,7 +38,6 @@ namespace SweetDeal.Source.Bakery
 
         public void AddImprove(HeroImproveData improveData)
         {
-            Debug.Log(improveData.BagCount);
             this.heroImproveData.BootsModifier += improveData.BootsModifier;
             this.heroImproveData.BagCount += improveData.BagCount;
         }
@@ -51,6 +51,7 @@ namespace SweetDeal.Source.Bakery
             if (heroImproveData == null)
             {
                 heroImproveData = new HeroImproveData();
+                heroImproveData.BagCount = 1;
             }
 
             if (equipmentData == null)
@@ -63,6 +64,11 @@ namespace SweetDeal.Source.Bakery
         {
             DataKeeper.Save(heroImproveData, STRING_KEYS_CONSTRAINTS.HeroImproveKey);
             DataKeeper.Save(equipmentData, STRING_KEYS_CONSTRAINTS.EquipmentKey);
+        }
+
+        private void OnDestroy()
+        {
+            Save();
         }
     }
 }

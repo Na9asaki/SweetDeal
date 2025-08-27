@@ -23,6 +23,9 @@ namespace SweetDeal.Source
 
         private void Awake()
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            
             _input = new PCInput();
             _playerController.Init(_input);
             _toolsController.Init(_input);

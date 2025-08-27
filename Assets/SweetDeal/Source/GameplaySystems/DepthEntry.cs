@@ -1,5 +1,6 @@
 ﻿using SweetDeal.Source.LocationGenerator;
 using SweetDeal.Source.Loots;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,6 +10,7 @@ namespace SweetDeal.Source.GameplaySystems
     {
         [SerializeField] private int Price = 10;
         [SerializeField] private float LevelModifier = 1;
+        [SerializeField] private TMP_Text _priceView;
         
         public UnityEvent onLoadNextLevelDepth;
 
@@ -26,6 +28,8 @@ namespace SweetDeal.Source.GameplaySystems
             _door = GetComponent<Door>();
             
             _door.onInteractionUsedUnityEvent.AddListener(Enter);
+
+            _priceView.text = $"Cost: {Price}";
         }
         
         private void Enter()
