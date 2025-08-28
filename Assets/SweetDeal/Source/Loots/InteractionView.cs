@@ -8,6 +8,7 @@ namespace SweetDeal.Source.Loots
     public class InteractionView : MonoBehaviour
     {
         [SerializeField] private GameObject _view;
+        [SerializeField] private bool _canRotate = true;
 
         private Interaction _loot;
 
@@ -45,7 +46,8 @@ namespace SweetDeal.Source.Loots
         {
             _activated = true;
             _view.SetActive(true);
-            StartCoroutine(ViewRoutine());
+            if (_canRotate)
+                StartCoroutine(ViewRoutine());
         }
 
         public void Deactivate()

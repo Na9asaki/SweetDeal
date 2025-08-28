@@ -952,7 +952,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2316fce5127f6d248948712d76a7cad2, type: 2}
   - {fileID: 11400000, guid: d850cd1dd5ed67046b6d3dc439131b7a, type: 2}
   toolsBar: {fileID: 468517378}
-  defaultSprite: {fileID: 21300000, guid: 4402e681a541f0043b8d5e43d37bb1c5, type: 3}
+  defaultSprite: {fileID: 816019646, guid: f79584efb377de2448dd1fc86e064968, type: 3}
 --- !u!114 &468517378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2738,7 +2738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _controller: {fileID: 1925873226771195538}
   _cargo: {fileID: 2370976993298242988}
-  _noiseModifier: 10
+  _noiseModifier: 50
   _noiseDuration: 1
 --- !u!143 &1925873226771195538
 CharacterController:
@@ -2758,13 +2758,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1.8
-  m_Radius: 0.4
+  m_Height: 2
+  m_Radius: 0.52
   m_SlopeLimit: 45
   m_StepOffset: 0.25
   m_SkinWidth: 0.02
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 0.93, z: 0}
+  m_Center: {x: 0, y: 1.1, z: 0}
 --- !u!114 &1925873226771195539
 MonoBehaviour:
   m_ObjectHideFlags: 0
