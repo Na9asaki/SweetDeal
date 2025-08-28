@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638919776015618110
+  lastModified: 638919883954981886
   FileSizes: []
   Exists: 1
 --- !u!114 &-6104296809193114195
@@ -153,6 +153,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4200
+--- !u!114 &-1446632526297061703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/amb/3D/snd_door_open
+  m_EditorClassIdentifier: 
+  Path: event:/amb/3D/snd_door_open
+  Guid:
+    Data1: -517060422
+    Data2: 1096445258
+    Data3: 1330944919
+    Data4: -1853886249
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1400
 --- !u!114 &-137969033169981523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +233,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1500
+  Length: 796
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,6 +261,7 @@ MonoBehaviour:
   - {fileID: -6104296809193114195}
   - {fileID: 4448253115492240225}
   - {fileID: -67001154917889491}
+  - {fileID: -1446632526297061703}
   EditorParameters:
   - {fileID: 8454519786651094332}
   MasterBanks:
@@ -241,7 +269,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 3947635370847002615}
   cacheVersion: 131847
-  cacheTime: 638919776015636742
+  cacheTime: 638919883955004038
   SerializableEventsDict:
   - key: event:/amb/2D/amb_dungeon
     index: 0
@@ -265,6 +293,8 @@ MonoBehaviour:
     index: 9
   - key: event:/snd_PC/snd_footsteps_run
     index: 10
+  - key: event:/amb/3D/snd_door_open
+    index: 11
 --- !u!114 &1145622500636616921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,10 +364,10 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638919776015636742
+  lastModified: 638919883955004038
   FileSizes:
   - Name: 
-    Value: 1372
+    Value: 1428
   Exists: 1
 --- !u!114 &4448253115492240225
 MonoBehaviour:
