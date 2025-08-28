@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9096596846651822356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/music/amb_music_bakery
+  m_EditorClassIdentifier: 
+  Path: event:/music/amb_music_bakery
+  Guid:
+    Data1: 246682559
+    Data2: 1250629060
+    Data3: 471543473
+    Data4: -618997630
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 82285
+--- !u!114 &-8736946826545178412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/snd_PC/snd_buying_backpack
+  m_EditorClassIdentifier: 
+  Path: event:/snd_PC/snd_buying_backpack
+  Guid:
+    Data1: -2091341337
+    Data2: 1109473414
+    Data3: -1272901989
+    Data4: -1206355943
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 497
 --- !u!114 &-6251912829148813130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,9 +69,63 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638918013346867639
+  lastModified: 638919733193769733
   FileSizes: []
   Exists: 1
+--- !u!114 &-6104296809193114195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/snd_menu_click_shop_items
+  m_EditorClassIdentifier: 
+  Path: event:/UI/snd_menu_click_shop_items
+  Guid:
+    Data1: 1099717013
+    Data2: 1169542456
+    Data3: -1631497306
+    Data4: 203976866
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 129
+--- !u!114 &-3275805092879976295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/amb/2D/amb_torch_bakery
+  m_EditorClassIdentifier: 
+  Path: event:/amb/2D/amb_torch_bakery
+  Guid:
+    Data1: 69955812
+    Data2: 1185006979
+    Data3: 409493685
+    Data4: -584588928
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11888
 --- !u!114 &-1619350150099299672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,16 +198,94 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -1619350150099299672}
   - {fileID: -137969033169981523}
-  EditorParameters: []
+  - {fileID: 3462386752762059040}
+  - {fileID: -9096596846651822356}
+  - {fileID: -3275805092879976295}
+  - {fileID: 1145622500636616921}
+  - {fileID: 6840415056727401397}
+  - {fileID: -8736946826545178412}
+  - {fileID: -6104296809193114195}
+  EditorParameters:
+  - {fileID: 8454519786651094332}
   MasterBanks:
   - {fileID: -6251912829148813130}
   StringsBanks:
   - {fileID: 3947635370847002615}
   cacheVersion: 131847
-  cacheTime: 638918013346883554
+  cacheTime: 638919733193803016
   SerializableEventsDict:
-  - key: event:/amb/amb_dungeon
+  - key: event:/amb/2D/amb_dungeon
     index: 0
+  - key: event:/amb/3D/amb_torch
+    index: 1
+  - key: event:/amb/2D/amb_safe_zone
+    index: 2
+  - key: event:/music/amb_music_bakery
+    index: 3
+  - key: event:/amb/2D/amb_torch_bakery
+    index: 4
+  - key: event:/UI/snd_menu_point_button
+    index: 5
+  - key: event:/UI/snd_menu_click_button
+    index: 6
+  - key: event:/snd_PC/snd_buying_backpack
+    index: 7
+  - key: event:/UI/snd_menu_click_shop_items
+    index: 8
+--- !u!114 &1145622500636616921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/snd_menu_point_button
+  m_EditorClassIdentifier: 
+  Path: event:/UI/snd_menu_point_button
+  Guid:
+    Data1: -875608269
+    Data2: 1156028683
+    Data3: -1115571319
+    Data4: -242147631
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 166
+--- !u!114 &3462386752762059040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/amb/2D/amb_safe_zone
+  m_EditorClassIdentifier: 
+  Path: event:/amb/2D/amb_safe_zone
+  Guid:
+    Data1: 596922756
+    Data2: 1340274694
+    Data3: -1292713578
+    Data4: -813118595
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 37579
 --- !u!114 &3947635370847002615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,8 +301,59 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638918013346883554
+  lastModified: 638919733193803016
   FileSizes:
   - Name: 
-    Value: 834
+    Value: 1270
+  Exists: 1
+--- !u!114 &6840415056727401397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/snd_menu_click_button
+  m_EditorClassIdentifier: 
+  Path: event:/UI/snd_menu_click_button
+  Guid:
+    Data1: -1687867243
+    Data2: 1242287937
+    Data3: -1141172334
+    Data4: 446531607
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 129
+--- !u!114 &8454519786651094332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/EnemyDistance
+  m_EditorClassIdentifier: 
+  Name: EnemyDistance
+  StudioPath: parameter:/EnemyDistance
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3225379143
+    data2: 3386664200
+  Type: 0
+  IsGlobal: 1
+  Labels: []
   Exists: 1
