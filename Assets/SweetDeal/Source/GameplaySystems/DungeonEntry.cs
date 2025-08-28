@@ -1,5 +1,8 @@
-﻿using SweetDeal.Source.LocationGenerator;
+﻿using System.Collections.Generic;
+using SweetDeal.Source.Gadgets.Inventory;
+using SweetDeal.Source.LocationGenerator;
 using SweetDeal.Source.Loots;
+using SweetDeal.Source.Scenes;
 using UnityEngine;
 
 namespace SweetDeal.Source.GameplaySystems
@@ -25,6 +28,7 @@ namespace SweetDeal.Source.GameplaySystems
         private void Exit()
         {
             var cargo = FindAnyObjectByType<Cargo>();
+            var toolsBar = FindAnyObjectByType<ToolsBar>();
             int amount = 0;
             foreach (var bag in cargo.Bags)
             {
@@ -34,8 +38,21 @@ namespace SweetDeal.Source.GameplaySystems
             {
                 cookies = amount
             };
+            EquipmentData data2 = new();
 
+            foreach (var gadget in toolsBar.Gadgets)
+            {
+                if (gadget != null)
+                    data2.EquipmentNameAmountData.Add(new EquipmentNameAmountData()
+                    {
+                        Amount = gadget.UseNumbers,
+                        Name = gadget.Name
+                    });
+            }
+            DataKeeper.Save(data2, STRING_KEYS_CONSTRAINTS.EquipmentKey);
             DataKeeper.Save(data, STRING_KEYS_CONSTRAINTS.CookieEquipmentKey);
+            
+            LevelLoader.LoadMenu();
         }
     }
 }

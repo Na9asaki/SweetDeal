@@ -159,16 +159,44 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8187260922514609117, guid: de336a026ba41244abc7c429936d4352, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8187260922514609117, guid: de336a026ba41244abc7c429936d4352, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2421778532305384461}
   m_SourcePrefab: {fileID: 100100000, guid: de336a026ba41244abc7c429936d4352, type: 3}
 --- !u!4 &71938410760314520 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3340500912476920185, guid: de336a026ba41244abc7c429936d4352, type: 3}
   m_PrefabInstance: {fileID: 3360886521008556001}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6862001584679064636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8187260922514609117, guid: de336a026ba41244abc7c429936d4352, type: 3}
+  m_PrefabInstance: {fileID: 3360886521008556001}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &2421778532305384461
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6862001584679064636}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.7949525, y: 1.553887, z: 0.11666105}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.07055664, y: -0.321527, z: 0.06444931}
+  m_TimeToStationary: 0.5
 --- !u!95 &9110700888196668539 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5822013385911393178, guid: de336a026ba41244abc7c429936d4352, type: 3}
@@ -182,6 +210,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 814473407930871489}
     m_Modifications:
+    - target: {fileID: 3716135592395536835, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 127849e1342384c4598533ea9f03cf5f, type: 3}
+    - target: {fileID: 4719731598531112086, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 06a9d1d82c0d0ce41ae0d63378a74d3c, type: 2}
+    - target: {fileID: 4719731598531112086, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719731598531112086, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8965168133110149546, guid: 06a9d1d82c0d0ce41ae0d63378a74d3c, type: 2}
+    - target: {fileID: 4719731598531112086, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753065375199329361, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.63761
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753065375199329361, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.63761
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753065375199329361, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.63761
+      objectReference: {fileID: 0}
     - target: {fileID: 6753065375199329361, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -192,7 +252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6753065375199329361, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.364
+      value: -0.567
       objectReference: {fileID: 0}
     - target: {fileID: 6753065375199329361, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
       propertyPath: m_LocalRotation.w

@@ -21,6 +21,11 @@ namespace SweetDeal.Source.Stealth
             _noiseSignal = GetComponent<NoiseSignal>();
         }
 
+        public void SetNoiseModifier(float noiseModifier)
+        {
+            _noiseModifier *= (1 - noiseModifier);
+        }
+
         private void FixedUpdate()
         {
             if (_controller.velocity.sqrMagnitude > 0.01f)

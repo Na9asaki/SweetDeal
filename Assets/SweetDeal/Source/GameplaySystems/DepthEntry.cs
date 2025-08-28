@@ -1,6 +1,6 @@
-﻿using System;
-using SweetDeal.Source.LocationGenerator;
-using SweetDeal.Source.Scenes;
+﻿using SweetDeal.Source.LocationGenerator;
+using SweetDeal.Source.Loots;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,36 +8,39 @@ namespace SweetDeal.Source.GameplaySystems
 {
     public class DepthEntry : MonoBehaviour
     {
+        [SerializeField] private int Price = 10;
+        [SerializeField] private float LevelModifier = 1;
+        [SerializeField] private TMP_Text _priceView;
+        
         public UnityEvent onLoadNextLevelDepth;
 
-        private bool _lastDepthLevel;
         private Boostrap _boostrap;
         private Door _door;
+        private Cargo _cargo;
 
         private void Awake()
         {
             _boostrap = FindAnyObjectByType<Boostrap>();
+            _cargo = FindAnyObjectByType<Cargo>();
+
+            Price = Mathf.RoundToInt(_boostrap.DepthLevel.Level * LevelModifier * Price);
+            
             _door = GetComponent<Door>();
             
             _door.onInteractionUsedUnityEvent.AddListener(Enter);
-        }
 
-        public void ChangeAction()
-        {
-            _lastDepthLevel = true;
+            _priceView.text = $"Cost: {Price}";
         }
         
         private void Enter()
         {
-            if (_lastDepthLevel)
+            if (!_cargo.Spend(Price))
             {
-                LevelLoader.LoadMenu();
+                return;
             }
-            else
-            {
-                onLoadNextLevelDepth.Invoke();
-                _boostrap.Restart();
-            }
+            
+            onLoadNextLevelDepth.Invoke();
+            _boostrap.Restart();
         }
     }
 }

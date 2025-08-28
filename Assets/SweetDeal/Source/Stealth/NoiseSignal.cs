@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace SweetDeal.Source.Stealth
 {
@@ -6,7 +7,10 @@ namespace SweetDeal.Source.Stealth
     {
         [SerializeField] private LayerMask _layerMask;
         
-        private Collider[] _colliders =  new Collider[8];
+        private Collider[] _colliders =  new Collider[4];
+
+        // можно подписаться, чтобы воспроизвести звук
+        public UnityEvent onEmit;
 
         public void Emit(Vector3 position, float force)
         {

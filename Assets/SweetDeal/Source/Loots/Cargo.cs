@@ -6,19 +6,24 @@ namespace SweetDeal.Source.Loots
 {
     public class Cargo : MonoBehaviour
     {
-        [SerializeField] private BagScriptableObject _bag;
-        
         private List<Bag> _bags = new List<Bag>();
-        
-        #if UNITY_EDITOR
-        private void Awake()
-        {
-            AddBag(_bag);
-            Fill(40);
-        }
-#endif
-        
+
+        public event Action OnAdded;
         public IEnumerable<Bag> Bags => _bags;
+
+        public int Count
+        {
+            get
+            {
+                int temp = 0;
+                foreach (var bag in _bags)
+                {
+                    temp += bag.Count;
+                }
+                Debug.Log(temp);
+                return temp;
+            }
+        }
 
         public void AddBag(BagScriptableObject bag)
         {
@@ -40,6 +45,37 @@ namespace SweetDeal.Source.Loots
                     break;
                 }
             }
+            OnAdded?.Invoke();
+        }
+
+        public bool Spend(int amount)
+        {
+            int have = 0;
+            foreach (var bag in _bags)
+            {
+                have += bag.Count;
+            }
+
+            if (have < amount)
+            {
+                return false;
+            }
+            
+            foreach (var bag in _bags)
+            {
+                if (bag.Count >= amount)
+                {
+                    bag.AddCookie(-amount);
+                    break;
+                }
+                else
+                {
+                    bag.AddCookie(-bag.Count);
+                    amount -= bag.Count;
+                }
+            }
+
+            return true;
         }
     }
 }

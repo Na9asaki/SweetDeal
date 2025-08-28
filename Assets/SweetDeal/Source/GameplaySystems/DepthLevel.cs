@@ -8,6 +8,8 @@ namespace SweetDeal.Source.GameplaySystems
         [SerializeField] private LocationScriptableObject[] locationsDefinitions;
 
         private int _depthLevel = 0;
+        
+        public int Level => _depthLevel;
 
         public LocationScriptableObject GetLocationDefinition()
         {
@@ -16,11 +18,7 @@ namespace SweetDeal.Source.GameplaySystems
 
         public void UpdateValue()
         {
-            _depthLevel = _depthLevel + 1;
-            if (_depthLevel == locationsDefinitions.Length - 1)
-            {
-                FindAnyObjectByType<DepthEntry>().ChangeAction();
-            }
+            _depthLevel = (_depthLevel + 1) % locationsDefinitions.Length;
         }
     }
 }

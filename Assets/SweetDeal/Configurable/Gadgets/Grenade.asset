@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e05aaa28536c46b8a2cdb8e1da506b49, type: 3}
+  m_Name: Grenade
+  m_EditorClassIdentifier: 
+  <Sprite>k__BackingField: {fileID: 21300000, guid: fcc69dd4194444542880145fdeb2b835, type: 3}
+  <Name>k__BackingField: Grenade
+  <Description>k__BackingField: Throw it
+  <Projectile>k__BackingField: {fileID: 1026852932564763207, guid: 2b97696fb6bb25148a6eb5ac0c5e645b, type: 3}
+  <ThrowForce>k__BackingField: 5
+  <ThrowHeight>k__BackingField: 1.5
