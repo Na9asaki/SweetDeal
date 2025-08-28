@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638919741987230941
+  lastModified: 638919776015618110
   FileSizes: []
   Exists: 1
 --- !u!114 &-6104296809193114195
@@ -180,6 +180,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 11888
+--- !u!114 &-67001154917889491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/snd_PC/snd_footsteps_run
+  m_EditorClassIdentifier: 
+  Path: event:/snd_PC/snd_footsteps_run
+  Guid:
+    Data1: 1806195037
+    Data2: 1253775141
+    Data3: -720132962
+    Data4: 1388215949
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +232,8 @@ MonoBehaviour:
   - {fileID: 6840415056727401397}
   - {fileID: -8736946826545178412}
   - {fileID: -6104296809193114195}
+  - {fileID: 4448253115492240225}
+  - {fileID: -67001154917889491}
   EditorParameters:
   - {fileID: 8454519786651094332}
   MasterBanks:
@@ -212,7 +241,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 3947635370847002615}
   cacheVersion: 131847
-  cacheTime: 638919741987243100
+  cacheTime: 638919776015636742
   SerializableEventsDict:
   - key: event:/amb/2D/amb_dungeon
     index: 0
@@ -232,6 +261,10 @@ MonoBehaviour:
     index: 7
   - key: event:/UI/snd_menu_click_shop_items
     index: 8
+  - key: event:/snd_PC/snd_footsteps_walk
+    index: 9
+  - key: event:/snd_PC/snd_footsteps_run
+    index: 10
 --- !u!114 &1145622500636616921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,11 +334,38 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638919741987243100
+  lastModified: 638919776015636742
   FileSizes:
   - Name: 
-    Value: 1270
+    Value: 1372
   Exists: 1
+--- !u!114 &4448253115492240225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/snd_PC/snd_footsteps_walk
+  m_EditorClassIdentifier: 
+  Path: event:/snd_PC/snd_footsteps_walk
+  Guid:
+    Data1: 232094757
+    Data2: 1301487151
+    Data3: -2124654674
+    Data4: -1084625796
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 796
 --- !u!114 &6840415056727401397
 MonoBehaviour:
   m_ObjectHideFlags: 0
