@@ -17,6 +17,13 @@ namespace SweetDeal.Source.Bakery
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+
+            #if UNITY_EDITOR
+            DataKeeper.Save(new CookieEquipmentData()
+            {
+                cookies = 100
+            }, STRING_KEYS_CONSTRAINTS.CookieEquipmentKey);
+            #endif
             
             playerContainer.Init();
             playerEquipmentAndImprovementStatus.Init();

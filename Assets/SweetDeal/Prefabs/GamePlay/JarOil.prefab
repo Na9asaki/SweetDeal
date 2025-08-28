@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4844285399690115664}
   - component: {fileID: 1135089974186156878}
   - component: {fileID: 6489032464428973262}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: JarOil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 1276693228264988854}
   - component: {fileID: 6425313386047018216}
   - component: {fileID: 8481135749307037207}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,6 +11,7 @@ namespace SweetDeal.Source.Gadgets.Inventory
         private int _selected;
         
         public event Action<Gadget> OnSelected;
+        public event Action OnGrenadeThrowed;
         
         public IEnumerable<Gadget> Gadgets => _gadgets;
 
@@ -42,6 +43,7 @@ namespace SweetDeal.Source.Gadgets.Inventory
             if (_gadgets[_selected] != null)
             {
                 _gadgets[_selected].Use();
+                OnGrenadeThrowed?.Invoke();
                 if (_gadgets[_selected].IsEmpty)
                 {
                     _gadgets[_selected] = null;

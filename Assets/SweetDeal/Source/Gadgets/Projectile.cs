@@ -6,7 +6,7 @@ namespace SweetDeal.Source.Gadgets
     [RequireComponent(typeof(Rigidbody))]
     public abstract class Projectile : MonoBehaviour
     {
-        private Rigidbody _rigidbody;
+        protected Rigidbody _rigidbody;
         
         protected virtual void Awake()
         {

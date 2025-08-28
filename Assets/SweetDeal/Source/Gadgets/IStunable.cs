@@ -2,6 +2,6 @@
 {
     public interface IStunned
     {
-        public void Stun();
+        public void Stun(float timeStun);
     }
 }

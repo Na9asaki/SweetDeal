@@ -23,7 +23,7 @@ namespace SweetDeal.Source.Stealth
 
         public void SetNoiseModifier(float noiseModifier)
         {
-            _noiseModifier = noiseModifier;
+            _noiseModifier *= (1 - noiseModifier);
         }
 
         private void FixedUpdate()

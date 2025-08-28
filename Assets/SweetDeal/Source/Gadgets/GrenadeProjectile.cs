@@ -9,6 +9,7 @@ namespace SweetDeal.Source.Gadgets
     {
         [SerializeField] private float timeToExplode;
         [SerializeField] private float noiseVolume;
+        [SerializeField] private MeshRenderer meshRenderer;
         private NoiseSignal _noiseSignal;
         
         public UnityEvent onExplode;
@@ -23,7 +24,10 @@ namespace SweetDeal.Source.Gadgets
         {
             yield return new WaitForSeconds(timeToExplode);
             onExplode.Invoke();
+            _rigidbody.isKinematic = true;
             _noiseSignal.Emit(transform.position, noiseVolume);
+            meshRenderer.enabled = false;
+            yield return new WaitForSeconds(timeToExplode);
             Destroy(gameObject);
         }
 

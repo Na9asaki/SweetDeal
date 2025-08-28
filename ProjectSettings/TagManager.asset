@@ -16,8 +16,8 @@ TagManager:
   - Monster
   - Projectile
   - Player
-  - 
-  - 
+  - PlayerDetector
+  - Projectile
   - 
   - 
   - 
