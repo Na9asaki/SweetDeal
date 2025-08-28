@@ -223,6 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationsDefinitions:
   - {fileID: 11400000, guid: c25ecab037c9b5242a1d841a42f9bbaf, type: 2}
+  - {fileID: 11400000, guid: 50581b757cfd9d34f8de9e7b319a3d3f, type: 2}
 --- !u!114 &163625084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2737,6 +2738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 1925873226771195538}
+  maxSqrSpeed: 15
   _cargo: {fileID: 2370976993298242988}
   _noiseModifier: 50
   _noiseDuration: 1

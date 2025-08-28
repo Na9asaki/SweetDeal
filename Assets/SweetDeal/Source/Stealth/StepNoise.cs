@@ -13,6 +13,7 @@ namespace SweetDeal.Source.Stealth
         [SerializeField] private Cargo _cargo;
         [SerializeField] private float _noiseModifier;
         [SerializeField] private float _noiseDuration;
+        [SerializeField] private float _baseMinimalNouse = 5f;
 
         private Coroutine _coroutine;
         private NoiseSignal _noiseSignal;
@@ -55,9 +56,8 @@ namespace SweetDeal.Source.Stealth
             }
 
             power /= capacity;
-            power *= _noiseModifier;
-            power *= _noiseModifier;
-            
+            power = power * _noiseModifier + _baseMinimalNouse;
+            power *= _controller.velocity.sqrMagnitude / maxSqrSpeed;
             _coroutine = StartCoroutine(StepNoiseRoutine(power));
         }
 

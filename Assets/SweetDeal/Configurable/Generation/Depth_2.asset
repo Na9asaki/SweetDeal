@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8239aee38e74157b8e7735aec661866, type: 3}
+  m_Name: Depth_2
+  m_EditorClassIdentifier: 
+  <NoDoors>k__BackingField:
+  - {fileID: 1994510795905759064, guid: 1fdf886a8db23ca4db8518949a56ab26, type: 3}
+  <OneAndMoreDoors>k__BackingField:
+  - {fileID: 7750488428224183784, guid: 4b666c37a906ec24a966c43b86c021bb, type: 3}
+  - {fileID: 9042935730441131101, guid: f8d017621bf25b14a96708a6e0556d6a, type: 3}
+  <Hub>k__BackingField:
+  - {fileID: 3392400965831509794, guid: 679a1b8abe9242140a40b97c7c8f79c8, type: 3}
+  <Exit>k__BackingField: {fileID: 2322977937945331416, guid: ff67be2c8916b4f47aac1b8a9fd2e485, type: 3}
+  <Count>k__BackingField: 8
