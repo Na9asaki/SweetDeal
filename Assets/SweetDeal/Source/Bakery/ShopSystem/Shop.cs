@@ -20,17 +20,12 @@ namespace SweetDeal.Source.Bakery.ShopSystem
         private Dictionary<ShopCardDefinition, int> _basket =  new Dictionary<ShopCardDefinition, int>();
 
         private bool _coinsState;
-        private bool _firstOpen = true;
 
         public int FullCost {get; private set;}
 
         public void Activate()
         {
-            if (_firstOpen)
-            {
-                OnSalesStarted?.Invoke(playerCoins.Coins);
-                _firstOpen = false;
-            }
+            OnSalesStarted?.Invoke(playerCoins.Coins);
             OnCostChange?.Invoke(FullCost, playerCoins.Coins);
         }
 
@@ -109,7 +104,6 @@ namespace SweetDeal.Source.Bakery.ShopSystem
         {
             if (playerCoins.Coins >= FullCost)
             {
-                _firstOpen = true;
                 playerCoins.Spend(FullCost);
                 FullCost = 0;
                 OnBought?.Invoke(_basket);
