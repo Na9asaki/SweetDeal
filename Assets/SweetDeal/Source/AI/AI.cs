@@ -19,8 +19,7 @@ namespace SweetDeal.Source.AI
         private void Start()
         {
             _construct.BehaviourMachine.EnterIn<PatrolState>();
-            var door = transform.root.GetComponent<Room>().Entry;
-            _gridPosition = Grid.WorldToGrid(door.Position + door.transform.forward * Grid.cellSize / 2);
+            _gridPosition = Grid.WorldToGrid(transform.position);
         }
 
         private void FixedUpdate()

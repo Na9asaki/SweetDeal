@@ -5,8 +5,8 @@ namespace SweetDeal.Source.LocationGenerator
 {
     public class Grid : MonoBehaviour
     {
-        [field: SerializeField] public Vector3 StartCorner {get; private set;}
-        [field: SerializeField] public Vector3 EndCorner {get; private set;}
+        [field: SerializeField] public Transform StartCorner {get; private set;}
+        [field: SerializeField] public Transform EndCorner {get; private set;}
         [field: SerializeField] public float CellSize { get; private set; } = 40;
         
         private static Vector3 endCorner;
@@ -18,27 +18,32 @@ namespace SweetDeal.Source.LocationGenerator
         public static Vector2Int WorldToGrid(Vector3 position)
         {
             var delta = position - startCorner;
-            int x = Mathf.RoundToInt(delta.x / cellSize);
-            int y = Mathf.RoundToInt(delta.z / cellSize);
+            int x = Mathf.FloorToInt(delta.x / cellSize);
+            int y = Mathf.FloorToInt(delta.z / cellSize);
+            
+            x = Mathf.Clamp(x, 0, _grid.GetLength(1) - 1);
+            y = Mathf.Clamp(y, 0, _grid.GetLength(0) - 1);
+            
             return new Vector2Int(y, x);
         }
 
         public void Init()
         {
-            Debug.Log("Init");
-            int width = Mathf.RoundToInt((EndCorner.x - StartCorner.x) / CellSize);
-            int height = Mathf.RoundToInt((EndCorner.z - StartCorner.z) / CellSize);
+            int width = Mathf.FloorToInt((EndCorner.position.x - StartCorner.position.x) / CellSize);
+            int height = Mathf.FloorToInt((EndCorner.position.z - StartCorner.position.z) / CellSize);
             _grid = new bool[height, width];
             cellSize = CellSize;
-            startCorner = StartCorner;
-            endCorner = EndCorner;
+            startCorner = StartCorner.position;
+            endCorner = EndCorner.position;
         }
 
         private Vector2Int GetGridPosition(Vector3 position)
         {
-            var delta = position - StartCorner;
-            int x = Mathf.RoundToInt(delta.x / CellSize);
-            int y = Mathf.RoundToInt(delta.z / CellSize);
+            var delta = position - StartCorner.position;
+            int x = Mathf.FloorToInt(delta.x / CellSize);
+            int y = Mathf.FloorToInt(delta.z / CellSize);
+            x = Mathf.Clamp(x, 0, _grid.GetLength(1) - 1);
+            y = Mathf.Clamp(y, 0, _grid.GetLength(0) - 1);
             return new Vector2Int(y, x);
         }
 

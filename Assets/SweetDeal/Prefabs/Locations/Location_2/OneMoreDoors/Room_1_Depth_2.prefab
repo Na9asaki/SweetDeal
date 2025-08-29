@@ -7862,14 +7862,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8174199664306785459, guid: 78c3fe00d54f46a458d88466acb31be2, type: 3}
-      propertyPath: _timeToStop
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8174199664306785459, guid: 78c3fe00d54f46a458d88466acb31be2, type: 3}
-      propertyPath: _waypoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8174199664306785459, guid: 78c3fe00d54f46a458d88466acb31be2, type: 3}
       propertyPath: '_waypoints.Array.data[0]'
       value: 
       objectReference: {fileID: 628164156071175392}
