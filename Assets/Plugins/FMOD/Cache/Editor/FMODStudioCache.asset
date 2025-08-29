@@ -96,7 +96,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638920806355903524
+  lastModified: 638920826260091643
   FileSizes: []
   Exists: 1
 --- !u!114 &-6104296809193114195
@@ -126,6 +126,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 129
+--- !u!114 &-6086215049153159578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/snd_PC/snd_cookies_weight
+  m_EditorClassIdentifier: 
+  Path: event:/snd_PC/snd_cookies_weight
+  Guid:
+    Data1: -434751348
+    Data2: 1164715032
+    Data3: -553517677
+    Data4: -1728737432
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -1138358711745287404}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 796
 --- !u!114 &-5950257740481710379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,6 +316,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 740
+--- !u!114 &-1138358711745287404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/snd_cookies_weight/CookieCount
+  m_EditorClassIdentifier: 
+  Name: CookieCount
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3151336783
+    data2: 2830424995
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-137969033169981523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,6 +431,7 @@ MonoBehaviour:
   - {fileID: 4218927383012609416}
   - {fileID: -5950257740481710379}
   - {fileID: 3853772994078433156}
+  - {fileID: -6086215049153159578}
   EditorParameters:
   - {fileID: 8454519786651094332}
   MasterBanks:
@@ -386,7 +439,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 3947635370847002615}
   cacheVersion: 131847
-  cacheTime: 638920806355927658
+  cacheTime: 638920826260114214
   SerializableEventsDict:
   - key: event:/amb/2D/amb_dungeon
     index: 0
@@ -430,6 +483,8 @@ MonoBehaviour:
     index: 19
   - key: event:/snd_PC/snd_pc_fall
     index: 20
+  - key: event:/snd_PC/snd_cookies_weight
+    index: 21
 --- !u!114 &1013100782962408268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,10 +608,10 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638920806355927658
+  lastModified: 638920826260114214
   FileSizes:
   - Name: 
-    Value: 1850
+    Value: 1950
   Exists: 1
 --- !u!114 &4218927383012609416
 MonoBehaviour:
@@ -611,7 +666,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 796
+  Length: 400
 --- !u!114 &6840415056727401397
 MonoBehaviour:
   m_ObjectHideFlags: 0
