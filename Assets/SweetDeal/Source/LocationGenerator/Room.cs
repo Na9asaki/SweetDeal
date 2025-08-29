@@ -1,9 +1,12 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using SweetDeal.Source.AI;
 using SweetDeal.Source.LocationGenerator;
 using SweetDeal.Source.LocationGenerator.Configs;
+using SweetDeal.Source.Stealth;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Room : MonoBehaviour
 {
@@ -44,5 +47,4 @@ public class Room : MonoBehaviour
             ai.Init();
         }
     }
-
 }

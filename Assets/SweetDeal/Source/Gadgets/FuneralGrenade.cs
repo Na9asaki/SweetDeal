@@ -10,22 +10,23 @@ namespace SweetDeal.Source.Gadgets
         private Transform _spawnPoint;
         private float _throwHeight;
         private float _throwForce;
+        private Transform _player;
 
-        private Camera _camera = Camera.main;
-
-        public FuneralGrenade(Transform spawnPoint, int useNumbers, GadgetDefinition definition) :  base(useNumbers, definition)
+        public FuneralGrenade(Transform spawnPoint, Transform player, int useNumbers, GadgetDefinition definition) :  base(useNumbers, definition)
         {
             _grenadeProjectile = definition.Projectile as GrenadeProjectile;
             _spawnPoint = spawnPoint;
             _throwHeight = definition.ThrowHeight;
             _throwForce = definition.ThrowForce;
+            _player = player;
         }
 
         public override void Use()
         {
             UseNumbers -= 1;
             var grenade = GameObject.Instantiate(_grenadeProjectile, _spawnPoint.position, _spawnPoint.rotation);
-            var direction = _camera.transform.forward;
+            grenade.transform.parent = _spawnPoint;
+            var direction = _player.forward;
             direction.y = _throwHeight;
             direction.Normalize();
             grenade.Launch(direction, _throwForce);

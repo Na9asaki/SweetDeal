@@ -44,32 +44,6 @@ namespace SweetDeal.Source.Bakery.ShopSystem
             }
         }
 
-        private void CheckStatus(HeroImproveData data)
-        {
-            if (shopCardDefinition is ShopImproveCard)
-            {
-                var def = shopCardDefinition as ShopImproveCard;
-                if (def.ImproveCategories == ImproveCategories.Boots)
-                {
-                    if (Mathf.Approximately(data.BootsModifier, 0.6f))
-                    {
-                        gameObject.SetActive(false);
-                        return;
-                    }
-                    else gameObject.SetActive(true);
-                }
-                else
-                {
-                    if (data.BagCount == 4)
-                    {
-                        gameObject.SetActive(false);
-                        return;
-                    }
-                    else gameObject.SetActive(true);
-                }
-            }
-        }
-
         private void Activate()
         {
             _button.interactable = true;
@@ -77,6 +51,10 @@ namespace SweetDeal.Source.Bakery.ShopSystem
 
         private void Deactivate()
         {
+            if (itemAmount < 0)
+            {
+                return;
+            }
             _button.interactable = false;
         }
 

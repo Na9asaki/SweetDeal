@@ -229,6 +229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1012344664815048022}
+  - component: {fileID: 6909130951737722106}
   m_Layer: 0
   m_Name: Storage (13)
   m_TagString: Untagged
@@ -260,6 +261,27 @@ Transform:
   - {fileID: 2571804684693330166}
   m_Father: {fileID: 4715406905696243373}
   m_LocalEulerAnglesHint: {x: 0, y: 10.825, z: 0}
+--- !u!65 &6909130951737722106
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056169930119910005}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.8566103, y: 10, z: 10.318361}
+  m_Center: {x: 0.039076746, y: 0, z: 0.13268852}
 --- !u!1 &1994180106924422598
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1572504713058858493}
+  - component: {fileID: 5209447697447906395}
   m_Layer: 0
   m_Name: Storage (12)
   m_TagString: Untagged
@@ -335,6 +358,27 @@ Transform:
   - {fileID: 4634672084689026699}
   m_Father: {fileID: 4715406905696243373}
   m_LocalEulerAnglesHint: {x: 0, y: -29.4, z: 0}
+--- !u!65 &5209447697447906395
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2617545025149755665}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.8566103, y: 10, z: 10.318361}
+  m_Center: {x: 0.039076746, y: 0, z: 0.13268852}
 --- !u!1 &3905139263784864806
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,6 +527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1772774867640324672}
+  - component: {fileID: 7914798161841116364}
   m_Layer: 0
   m_Name: Storage (15)
   m_TagString: Untagged
@@ -514,6 +559,27 @@ Transform:
   - {fileID: 7243311473223738867}
   m_Father: {fileID: 4715406905696243373}
   m_LocalEulerAnglesHint: {x: 0, y: 8.032, z: 0}
+--- !u!65 &7914798161841116364
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4366157424574792908}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.8566103, y: 10, z: 10.318361}
+  m_Center: {x: 0.039076746, y: 0, z: 0.13268852}
 --- !u!1 &5517321895305457726
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,6 +713,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4204923136291262253}
+  - component: {fileID: 3734675032746053893}
   m_Layer: 0
   m_Name: Storage (16)
   m_TagString: Untagged
@@ -678,6 +745,27 @@ Transform:
   - {fileID: 1471334919999868552}
   m_Father: {fileID: 4715406905696243373}
   m_LocalEulerAnglesHint: {x: 0, y: -48.629, z: 0}
+--- !u!65 &3734675032746053893
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6167648438454390538}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.8566103, y: 10, z: 10.318361}
+  m_Center: {x: 0.039076746, y: 0, z: 0.13268852}
 --- !u!1 &6366832744722517323
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,6 +883,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5720315913564687867}
+  - component: {fileID: 6738051217841326217}
   m_Layer: 0
   m_Name: Storage (10)
   m_TagString: Untagged
@@ -826,6 +915,27 @@ Transform:
   - {fileID: 1802142835286955021}
   m_Father: {fileID: 4715406905696243373}
   m_LocalEulerAnglesHint: {x: 0, y: 36.397, z: 0}
+--- !u!65 &6738051217841326217
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6725510662305763746}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.8566103, y: 10, z: 10.318361}
+  m_Center: {x: 0.039076746, y: 0, z: 0.13268852}
 --- !u!1 &7225392198418289444
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,6 +1042,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8757973519089626336}
+  - component: {fileID: 4743319439011158716}
   m_Layer: 0
   m_Name: Storage (14)
   m_TagString: Untagged
@@ -963,6 +1074,27 @@ Transform:
   - {fileID: 337599750872089675}
   m_Father: {fileID: 4715406905696243373}
   m_LocalEulerAnglesHint: {x: 0, y: -84.83, z: 0}
+--- !u!65 &4743319439011158716
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9065692346432333113}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.8566103, y: 10, z: 10.318361}
+  m_Center: {x: 0.039076746, y: 0, z: 0.13268852}
 --- !u!1 &9131154260022224864
 GameObject:
   m_ObjectHideFlags: 0

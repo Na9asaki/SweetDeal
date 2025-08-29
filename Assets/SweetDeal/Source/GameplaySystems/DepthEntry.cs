@@ -23,7 +23,7 @@ namespace SweetDeal.Source.GameplaySystems
             _boostrap = FindAnyObjectByType<Boostrap>();
             _cargo = FindAnyObjectByType<Cargo>();
 
-            Price = Mathf.RoundToInt(_boostrap.DepthLevel.Level * LevelModifier * Price);
+            Price = Mathf.RoundToInt((_boostrap.DepthLevel.Level + 1) * LevelModifier * Price);
             
             _door = GetComponent<Door>();
             

@@ -19,6 +19,11 @@ namespace SweetDeal.Source.GameplaySystems
             var improveData = DataKeeper.Load<HeroImproveData>(STRING_KEYS_CONSTRAINTS.HeroImproveKey);
             var equipment = DataKeeper.Load<EquipmentData>(STRING_KEYS_CONSTRAINTS.EquipmentKey);
 
+            foreach (var eq in equipment.EquipmentNameAmountData)
+            {
+                Debug.Log($"{eq.Name} : {eq.Amount}");
+            }
+
             if (improveData != null)
             {
                 for (int i = 0; i < improveData.BagCount; i++)

@@ -10,6 +10,7 @@ namespace SweetDeal.Source.Player
         [SerializeField] private string velocityParameter = "Velocity";
         [SerializeField] private string slipParameter = "Slip";
         [SerializeField] private string throwParameter = "Throw";
+        [SerializeField] private string throwBackwardsParameter = "ThrowBackward";
         [SerializeField] private Animator animator;
         [SerializeField] private CharacterController characterController;
         [SerializeField] private ToolsBar toolsBar;
@@ -34,9 +35,12 @@ namespace SweetDeal.Source.Player
             animator.SetTrigger(slipParameter);
         }
 
-        private void Throw()
+        private void Throw(Gadget gadget)
         {
-            animator.SetTrigger(throwParameter);
+            if (gadget is FuneralGrenade)
+                animator.SetTrigger(throwParameter);
+            else 
+                animator.SetTrigger(throwBackwardsParameter);
         }
     }
 }

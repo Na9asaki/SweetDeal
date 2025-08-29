@@ -112,6 +112,7 @@ namespace SweetDeal.Source.Bakery.ShopSystem
                 _firstOpen = true;
                 playerCoins.Spend(FullCost);
                 FullCost = 0;
+                
                 OnBought?.Invoke(_basket);
             }
         }

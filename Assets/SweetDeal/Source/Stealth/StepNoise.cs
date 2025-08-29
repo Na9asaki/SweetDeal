@@ -36,11 +36,14 @@ namespace SweetDeal.Source.Stealth
             } else if (_coroutine != null) Deactivate();
         }
 
-        private IEnumerator StepNoiseRoutine(float power)
+        private IEnumerator StepNoiseRoutine(float capacityPower)
         {
+            float savedCapacity = capacityPower;
             while (true)
             {
-                _noiseSignal.Emit(transform.position, power);
+                capacityPower = savedCapacity * _noiseModifier + _baseMinimalNouse;
+                capacityPower *= _controller.velocity.sqrMagnitude / maxSqrSpeed;
+                _noiseSignal.Emit(transform.position, capacityPower);
                 yield return new WaitForSeconds(_noiseDuration);
             }
         }
@@ -56,8 +59,6 @@ namespace SweetDeal.Source.Stealth
             }
 
             power /= capacity;
-            power = power * _noiseModifier + _baseMinimalNouse;
-            power *= _controller.velocity.sqrMagnitude / maxSqrSpeed;
             _coroutine = StartCoroutine(StepNoiseRoutine(power));
         }
 

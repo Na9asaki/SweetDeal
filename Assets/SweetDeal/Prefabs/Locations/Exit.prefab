@@ -576,7 +576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1488418923683087687, guid: e320436e0b3ec4d42873f75d83192e2c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4062782767026967848, guid: e320436e0b3ec4d42873f75d83192e2c, type: 3}
       propertyPath: onOpen.m_PersistentCalls.m_Calls.Array.size
@@ -659,7 +659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b48520806c645cd99fd80840c9c154d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Price: 10
+  Price: 25
   LevelModifier: 1
   _priceView: {fileID: 9050119124894033508}
   onLoadNextLevelDepth:

@@ -5,13 +5,16 @@ using UnityEngine;
 namespace SweetDeal.Source.Gadgets.Inventory
 {
     public class ToolsBar : MonoBehaviour
-    {   
+    {
+        [SerializeField] private float cooldown = 2f;
+        
         private Gadget[] _gadgets = new Gadget[2];
         
         private int _selected;
+        private float lastTimeUse = 0;
         
         public event Action<Gadget> OnSelected;
-        public event Action OnGrenadeThrowed;
+        public event Action<Gadget> OnGrenadeThrowed;
         
         public IEnumerable<Gadget> Gadgets => _gadgets;
 
@@ -42,12 +45,16 @@ namespace SweetDeal.Source.Gadgets.Inventory
         {
             if (_gadgets[_selected] != null)
             {
-                _gadgets[_selected].Use();
-                OnGrenadeThrowed?.Invoke();
-                if (_gadgets[_selected].IsEmpty)
+                if (lastTimeUse <= Time.time)
                 {
-                    _gadgets[_selected] = null;
-                    OnSelected?.Invoke(null);
+                    _gadgets[_selected].Use();
+                    OnGrenadeThrowed?.Invoke(_gadgets[_selected]);
+                    if (_gadgets[_selected].IsEmpty)
+                    {
+                        _gadgets[_selected] = null;
+                        OnSelected?.Invoke(null);
+                    }
+                    lastTimeUse = Time.time + cooldown;
                 }
             }
         }
