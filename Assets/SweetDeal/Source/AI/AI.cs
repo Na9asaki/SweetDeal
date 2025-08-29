@@ -30,7 +30,6 @@ namespace SweetDeal.Source.AI
         public void Alert(Vector3 soundPosition)
         {
             var soundGridPos = Grid.WorldToGrid(soundPosition);
-            Debug.Log($"{soundGridPos} | {_gridPosition}");
             if (soundGridPos == _gridPosition)
             {
                 _construct.Data.NoisePosition = soundPosition;
