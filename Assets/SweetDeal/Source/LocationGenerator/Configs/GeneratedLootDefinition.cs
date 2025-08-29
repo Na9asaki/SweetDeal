@@ -7,5 +7,6 @@ namespace SweetDeal.Source.LocationGenerator.Configs
     public class GeneratedLootDefinition : ScriptableObject
     {
         [field: SerializeField] public Loot[] GeneratedLoots { get; private set; }
+        [field: SerializeField] public Loot[] Cookies { get; private set; }
     }
 }

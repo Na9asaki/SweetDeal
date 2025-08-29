@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <GeneratedLoots>k__BackingField:
   - {fileID: 6677957503514986898, guid: 207516b8767cbf345a5913ac92a71ec7, type: 3}
+  <Cookies>k__BackingField:
+  - {fileID: 4657475488932268235, guid: 99983e0e3adbaff4cb57e0c1b9e47cf8, type: 3}
