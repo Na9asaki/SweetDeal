@@ -97,7 +97,9 @@ MonoBehaviour:
   _entry: {fileID: 7870510414586996873}
   _ais: []
   _lootSpawnPoints: []
+  _cookiesSpawnPoints: []
   _lootCountsRange: {x: 0, y: 0}
+  _minCookies: 0
 --- !u!1 &1687502761726221190
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,6 +581,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4062782767026967848, guid: e320436e0b3ec4d42873f75d83192e2c, type: 3}
+      propertyPath: _colliderEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062782767026967848, guid: e320436e0b3ec4d42873f75d83192e2c, type: 3}
       propertyPath: onOpen.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -659,7 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b48520806c645cd99fd80840c9c154d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Price: 25
+  Price: 15
   LevelModifier: 1
   _priceView: {fileID: 9050119124894033508}
   onLoadNextLevelDepth:
