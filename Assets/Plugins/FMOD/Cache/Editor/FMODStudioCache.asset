@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638920089762506601
+  lastModified: 638920094648736162
   FileSizes: []
   Exists: 1
 --- !u!114 &-6104296809193114195
@@ -298,7 +298,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 3947635370847002615}
   cacheVersion: 131847
-  cacheTime: 638920089762523139
+  cacheTime: 638920094648754350
   SerializableEventsDict:
   - key: event:/amb/2D/amb_dungeon
     index: 0
@@ -397,7 +397,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638920089762523139
+  lastModified: 638920094648754350
   FileSizes:
   - Name: 
     Value: 1520
