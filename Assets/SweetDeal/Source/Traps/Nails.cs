@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using SweetDeal.Source.Stealth;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace SweetDeal.Source.Traps
 {
@@ -16,6 +17,8 @@ namespace SweetDeal.Source.Traps
         [SerializeField] private int countNoiseEmit = 3;
         
         private NoiseSignal _noiseSignal;
+        
+        public UnityEvent OnActivated;
 
         private void Awake()
         {
@@ -41,6 +44,7 @@ namespace SweetDeal.Source.Traps
             {
                 body.isKinematic = false;
             }
+            OnActivated?.Invoke();
             StartCoroutine(EmitRoutine());
         }
     }
