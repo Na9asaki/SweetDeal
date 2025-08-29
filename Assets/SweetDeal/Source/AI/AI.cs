@@ -2,12 +2,14 @@
 using SweetDeal.Source.AI.BehaviourStateMachine.StatesImplements;
 using SweetDeal.Source.Stealth;
 using UnityEngine;
+using Grid = SweetDeal.Source.LocationGenerator.Grid;
 
 namespace SweetDeal.Source.AI
 {
     public class AI : MonoBehaviour, INoiseListener
     {
         private BehaviourConstruct _construct;
+        private Vector2Int _gridPosition;
 
         private void Awake()
         {
@@ -17,6 +19,8 @@ namespace SweetDeal.Source.AI
         private void Start()
         {
             _construct.BehaviourMachine.EnterIn<PatrolState>();
+            var door = transform.root.GetComponent<Room>().Entry;
+            _gridPosition = Grid.WorldToGrid(door.Position + door.transform.forward * Grid.cellSize / 2);
         }
 
         private void FixedUpdate()
@@ -26,8 +30,13 @@ namespace SweetDeal.Source.AI
 
         public void Alert(Vector3 soundPosition)
         {
-            _construct.Data.NoisePosition = soundPosition;
-            _construct.BehaviourMachine.EnterIn<FollowState>();
+            var soundGridPos = Grid.WorldToGrid(soundPosition);
+            Debug.Log($"{soundGridPos} | {_gridPosition}");
+            if (soundGridPos == _gridPosition)
+            {
+                _construct.Data.NoisePosition = soundPosition;
+                _construct.BehaviourMachine.EnterIn<FollowState>();
+            }
         }
     }
 }

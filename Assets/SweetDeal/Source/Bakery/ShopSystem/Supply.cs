@@ -27,6 +27,7 @@ namespace SweetDeal.Source.Bakery.ShopSystem
 
             foreach (var card in equip)
             {
+                if (card.Value == 0) continue;
                 var gadgetName = ((ShopGadgetCard)card.Key).GadgetDefinition.Name;
                 data.EquipmentNameAmountData.Add(new EquipmentNameAmountData()
                 {

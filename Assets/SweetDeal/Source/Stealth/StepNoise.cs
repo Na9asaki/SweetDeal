@@ -9,9 +9,11 @@ namespace SweetDeal.Source.Stealth
     public class StepNoise : MonoBehaviour
     {
         [SerializeField] CharacterController _controller;
+        [SerializeField] private float maxSqrSpeed = 10;
         [SerializeField] private Cargo _cargo;
         [SerializeField] private float _noiseModifier;
         [SerializeField] private float _noiseDuration;
+        [SerializeField] private float _baseMinimalNouse = 5f;
 
         private Coroutine _coroutine;
         private NoiseSignal _noiseSignal;
@@ -34,11 +36,14 @@ namespace SweetDeal.Source.Stealth
             } else if (_coroutine != null) Deactivate();
         }
 
-        private IEnumerator StepNoiseRoutine(float power)
+        private IEnumerator StepNoiseRoutine(float capacityPower)
         {
+            float savedCapacity = capacityPower;
             while (true)
             {
-                _noiseSignal.Emit(transform.position, power);
+                capacityPower = savedCapacity * _noiseModifier + _baseMinimalNouse;
+                capacityPower *= _controller.velocity.sqrMagnitude / maxSqrSpeed;
+                _noiseSignal.Emit(transform.position, capacityPower);
                 yield return new WaitForSeconds(_noiseDuration);
             }
         }
@@ -54,8 +59,6 @@ namespace SweetDeal.Source.Stealth
             }
 
             power /= capacity;
-            power *= _noiseModifier;
-            
             _coroutine = StartCoroutine(StepNoiseRoutine(power));
         }
 

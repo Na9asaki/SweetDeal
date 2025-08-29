@@ -106,6 +106,7 @@ namespace SweetDeal.Source.Bakery.ShopSystem
             {
                 playerCoins.Spend(FullCost);
                 FullCost = 0;
+                
                 OnBought?.Invoke(_basket);
             }
         }

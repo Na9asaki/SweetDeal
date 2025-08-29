@@ -8,6 +8,8 @@ namespace SweetDeal.Source.Gadgets
     {
         protected Rigidbody _rigidbody;
         
+        public Vector3 Direction { get; private set; }
+        
         protected virtual void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
@@ -15,6 +17,7 @@ namespace SweetDeal.Source.Gadgets
 
         public void Launch(Vector3 direction, float force)
         {
+            Direction = direction;
             _rigidbody.AddForce(direction * force, ForceMode.VelocityChange);
             Do();
         }

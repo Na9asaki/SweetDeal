@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _view: {fileID: 1488418923683087687}
+  _canRotate: 0
 --- !u!1001 &3360886521008556001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -289,7 +290,7 @@ PrefabInstance:
     - target: {fileID: 3716135592395536835, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 127849e1342384c4598533ea9f03cf5f, type: 3}
+      objectReference: {fileID: 816019646, guid: f79584efb377de2448dd1fc86e064968, type: 3}
     - target: {fileID: 4719731598531112086, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -299,9 +300,25 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4719731598531112086, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.6314525
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719731598531112086, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.7253698
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719731598531112086, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.8113208
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719731598531112086, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -8965168133110149546, guid: 06a9d1d82c0d0ce41ae0d63378a74d3c, type: 2}
+    - target: {fileID: 4719731598531112086, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4288788943
+      objectReference: {fileID: 0}
     - target: {fileID: 4719731598531112086, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -324,7 +341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6753065375199329361, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.799
+      value: 1.554
       objectReference: {fileID: 0}
     - target: {fileID: 6753065375199329361, guid: 93b6ee66ef5a8294f9b235db88737895, type: 3}
       propertyPath: m_LocalPosition.z

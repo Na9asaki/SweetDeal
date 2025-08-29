@@ -9,13 +9,29 @@ namespace SweetDeal.Source.LocationGenerator
         [field: SerializeField] public Vector3 EndCorner {get; private set;}
         [field: SerializeField] public float CellSize { get; private set; } = 40;
         
-        private bool[,] _grid;
+        private static Vector3 endCorner;
+        private static Vector3 startCorner;
+        public static float cellSize;
+        
+        private static bool[,] _grid;
+
+        public static Vector2Int WorldToGrid(Vector3 position)
+        {
+            var delta = position - startCorner;
+            int x = Mathf.RoundToInt(delta.x / cellSize);
+            int y = Mathf.RoundToInt(delta.z / cellSize);
+            return new Vector2Int(y, x);
+        }
 
         public void Init()
         {
+            Debug.Log("Init");
             int width = Mathf.RoundToInt((EndCorner.x - StartCorner.x) / CellSize);
             int height = Mathf.RoundToInt((EndCorner.z - StartCorner.z) / CellSize);
             _grid = new bool[height, width];
+            cellSize = CellSize;
+            startCorner = StartCorner;
+            endCorner = EndCorner;
         }
 
         private Vector2Int GetGridPosition(Vector3 position)
@@ -37,6 +53,11 @@ namespace SweetDeal.Source.LocationGenerator
         {
             var gridPosition = GetGridPosition(position);
             _grid[gridPosition.x, gridPosition.y] = true;
+        }
+
+        private void OnDestroy()
+        {
+            _grid = null;
         }
     }
 }

@@ -12,6 +12,8 @@ namespace SweetDeal.Source.Player
         [SerializeField] private PlayerAnimatorProvider _playerAnimatorProvider;
         [SerializeField] private CharacterController _characterController;
         
+        private Coroutine _coroutine;
+        
         public void Init(PCInput input)
         {
             _playerInteraction.Init(input);
@@ -30,15 +32,20 @@ namespace SweetDeal.Source.Player
         private IEnumerator StunRoutine(float timeStun)
         {
             float baseSpeed = _thirdPersonController.MoveSpeed;
+            float baseRunSpeed = _thirdPersonController.SprintSpeed;
             _thirdPersonController.MoveSpeed = 0;
+            _thirdPersonController.SprintSpeed = 0;
             yield return new WaitForSeconds(timeStun);
             _thirdPersonController.MoveSpeed = baseSpeed;
+            _thirdPersonController.SprintSpeed = baseRunSpeed;
+            _coroutine = null;
         }
 
         public void Stun(float timeStun)
         {
             _playerAnimatorProvider.Slip();
-            StartCoroutine(StunRoutine(timeStun));
+            if (_coroutine == null)
+                _coroutine = StartCoroutine(StunRoutine(timeStun));
         }
     }
 }

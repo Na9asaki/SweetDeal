@@ -24,7 +24,7 @@ namespace SweetDeal.Source.Gadgets
         public override void Use()
         {
             UseNumbers -= 1;
-            var jarOil = GameObject.Instantiate(_oilProjectile);
+            var jarOil = GameObject.Instantiate(_oilProjectile, _spawnPoint);
             jarOil.transform.position = _spawnPoint.position;
             jarOil.transform.rotation = _spawnPoint.rotation;
             var direction = -_player.forward;

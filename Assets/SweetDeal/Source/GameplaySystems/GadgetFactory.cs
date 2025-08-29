@@ -16,7 +16,7 @@ namespace SweetDeal.Source.GameplaySystems
             switch (name)
             {
                 case "Grenade":
-                    return new FuneralGrenade(spawnPoint, useNumbers, grenade);
+                    return new FuneralGrenade(spawnPoint, player, useNumbers, grenade);
                 case "Oil":
                     return new Oil(spawnPoint, player, useNumbers, oil);
             }
