@@ -920,6 +920,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d3b4ffca1b2bb1e4db032fd86ae23151, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1600094808}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d3b4ffca1b2bb1e4db032fd86ae23151, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1600094809}
   m_SourcePrefab: {fileID: 100100000, guid: d3b4ffca1b2bb1e4db032fd86ae23151, type: 3}
 --- !u!1 &244712080
 GameObject:
@@ -1297,6 +1300,25 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &402919652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8944336655422409498, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
+  m_PrefabInstance: {fileID: 1396237527}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &402919658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402919652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &408398988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,6 +1348,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 499185094}
   - {fileID: 1645319805}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1567,6 +1590,69 @@ RectTransform:
   m_AnchoredPosition: {x: 117.439, y: -45.8406}
   m_SizeDelta: {x: 197.9944, y: 51.0515}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &499185093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 499185094}
+  - component: {fileID: 499185095}
+  m_Layer: 0
+  m_Name: snd_pc_death
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &499185094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499185093}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5202122, y: 3.3808482, z: -36.28344}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 408398989}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &499185095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499185093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 26886772
+      Data2: 1160197512
+      Data3: -1486969951
+      Data4: -134066397
+    Path: event:/snd_PC/snd_pc_death
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!4 &548124141 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6502182839619065283, guid: d3b4ffca1b2bb1e4db032fd86ae23151, type: 3}
@@ -2515,6 +2601,10 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8944336655422409497, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409498, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_Name
       value: MainCamera
@@ -2562,7 +2652,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8944336655422409498, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 402919658}
   m_SourcePrefab: {fileID: 100100000, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
 --- !u!1 &1478397759
 GameObject:
@@ -2753,6 +2846,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gadgetPoint: {fileID: 1288492686822396565}
+--- !u!114 &1600094809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574667230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59dcf0dbc880346569bb72630e601387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slipEvent:
+    Guid:
+      Data1: -1218779752
+      Data2: 1230733808
+      Data3: -2011032146
+      Data4: -1740498433
+    Path: event:/snd_PC/snd_pc_fall
 --- !u!1 &1638047990
 GameObject:
   m_ObjectHideFlags: 0
@@ -3089,7 +3201,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4286325822575307326, guid: 3f24c80895a77fa4bba15f9bd599a41b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2067694665}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3474463395411865732, guid: 3f24c80895a77fa4bba15f9bd599a41b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2094358056}
   m_SourcePrefab: {fileID: 100100000, guid: 3f24c80895a77fa4bba15f9bd599a41b, type: 3}
 --- !u!4 &1991114333 stripped
 Transform:
@@ -3254,6 +3369,42 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &2094358055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3474463395411865732, guid: 3f24c80895a77fa4bba15f9bd599a41b, type: 3}
+  m_PrefabInstance: {fileID: 1857322023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2094358056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094358055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -560220258
+      Data2: 1311147392
+      Data3: -1265529
+      Data4: 1892391432
+    Path: event:/amb/3D/amb_torch
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &611229064336031513
 GameObject:
   m_ObjectHideFlags: 0
@@ -3584,7 +3735,19 @@ MonoBehaviour:
   timeToDeath: 5
   onDeathStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 499185095}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5536317528057359030
 MonoBehaviour:
   m_ObjectHideFlags: 0

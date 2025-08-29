@@ -54,6 +54,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 497
+--- !u!114 &-6872272627352174518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/snd_enemy/snd_enemy_idle
+  m_EditorClassIdentifier: 
+  Path: event:/snd_enemy/snd_enemy_idle
+  Guid:
+    Data1: 1470285770
+    Data2: 1277010233
+    Data3: -1445845829
+    Data4: 250455101
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 14168
 --- !u!114 &-6251912829148813130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +96,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638920631254886886
+  lastModified: 638920806355903524
   FileSizes: []
   Exists: 1
 --- !u!114 &-6104296809193114195
@@ -99,6 +126,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 129
+--- !u!114 &-5950257740481710379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/snd_PC/snd_oil_jar
+  m_EditorClassIdentifier: 
+  Path: event:/snd_PC/snd_oil_jar
+  Guid:
+    Data1: 893132430
+    Data2: 1112614435
+    Data3: 1897602952
+    Data4: 1353474764
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 599
+--- !u!114 &-5240784784687395262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/snd_enemy/snd_enemy_walk
+  m_EditorClassIdentifier: 
+  Path: event:/snd_enemy/snd_enemy_walk
+  Guid:
+    Data1: 218990489
+    Data2: 1173422384
+    Data3: -1108044357
+    Data4: 654808882
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 406
 --- !u!114 &-4233124909995166664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,6 +372,13 @@ MonoBehaviour:
   - {fileID: -1446632526297061703}
   - {fileID: -4233124909995166664}
   - {fileID: 7277750052273232517}
+  - {fileID: 8992274214183131659}
+  - {fileID: 1013100782962408268}
+  - {fileID: -5240784784687395262}
+  - {fileID: -6872272627352174518}
+  - {fileID: 4218927383012609416}
+  - {fileID: -5950257740481710379}
+  - {fileID: 3853772994078433156}
   EditorParameters:
   - {fileID: 8454519786651094332}
   MasterBanks:
@@ -298,7 +386,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 3947635370847002615}
   cacheVersion: 131847
-  cacheTime: 638920631254889170
+  cacheTime: 638920806355927658
   SerializableEventsDict:
   - key: event:/amb/2D/amb_dungeon
     index: 0
@@ -328,6 +416,47 @@ MonoBehaviour:
     index: 12
   - key: event:/snd_PC/snd_pc_torch
     index: 13
+  - key: event:/snd_PC/snd_pc_death
+    index: 14
+  - key: event:/snd_PC/snd_backpack_weight
+    index: 15
+  - key: event:/snd_enemy/snd_enemy_walk
+    index: 16
+  - key: event:/snd_enemy/snd_enemy_idle
+    index: 17
+  - key: event:/snd_PC/snd_bomb_explode
+    index: 18
+  - key: event:/snd_PC/snd_oil_jar
+    index: 19
+  - key: event:/snd_PC/snd_pc_fall
+    index: 20
+--- !u!114 &1013100782962408268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/snd_PC/snd_backpack_weight
+  m_EditorClassIdentifier: 
+  Path: event:/snd_PC/snd_backpack_weight
+  Guid:
+    Data1: -386555776
+    Data2: 1243268362
+    Data3: 199464094
+    Data4: 1596200161
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 796
 --- !u!114 &1145622500636616921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,6 +511,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 37579
+--- !u!114 &3853772994078433156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/snd_PC/snd_pc_fall
+  m_EditorClassIdentifier: 
+  Path: event:/snd_PC/snd_pc_fall
+  Guid:
+    Data1: -1218779752
+    Data2: 1230733808
+    Data3: -2011032146
+    Data4: -1740498433
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1906
 --- !u!114 &3947635370847002615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,11 +553,38 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638920631254889170
+  lastModified: 638920806355927658
   FileSizes:
   - Name: 
-    Value: 1520
+    Value: 1850
   Exists: 1
+--- !u!114 &4218927383012609416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/snd_PC/snd_bomb_explode
+  m_EditorClassIdentifier: 
+  Path: event:/snd_PC/snd_bomb_explode
+  Guid:
+    Data1: 962663557
+    Data2: 1176592493
+    Data3: -1170036590
+    Data4: -351291085
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1030
 --- !u!114 &4448253115492240225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,3 +690,30 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &8992274214183131659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/snd_PC/snd_pc_death
+  m_EditorClassIdentifier: 
+  Path: event:/snd_PC/snd_pc_death
+  Guid:
+    Data1: 26886772
+    Data2: 1160197512
+    Data3: -1486969951
+    Data4: -134066397
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6663

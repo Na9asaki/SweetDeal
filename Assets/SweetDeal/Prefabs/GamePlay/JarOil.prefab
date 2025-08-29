@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4844285399690115664}
   - component: {fileID: 1135089974186156878}
   - component: {fileID: 6489032464428973262}
+  - component: {fileID: -6889734463127379824}
   m_Layer: 11
   m_Name: JarOil
   m_TagString: Untagged
@@ -74,6 +75,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puddleOil: {fileID: 2351674406270939569, guid: 27d9998ee3421d246b871cf75d0705ae, type: 3}
+--- !u!114 &-6889734463127379824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3265306982268377358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 893132430
+      Data2: 1112614435
+      Data3: 1897602952
+      Data4: 1353474764
+    Path: event:/snd_PC/snd_oil_jar
+  Event: 
+  EventPlayTrigger: 2
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7511138834531074531
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,6 +118,7 @@ GameObject:
   - component: {fileID: 1276693228264988854}
   - component: {fileID: 6425313386047018216}
   - component: {fileID: 8481135749307037207}
+  - component: {fileID: 8238587592734961672}
   m_Layer: 11
   m_Name: Cylinder
   m_TagString: Untagged
@@ -184,3 +217,34 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &8238587592734961672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7511138834531074531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 893132430
+      Data2: 1112614435
+      Data3: 1897602952
+      Data4: 1353474764
+    Path: event:/snd_PC/snd_oil_jar
+  Event: 
+  EventPlayTrigger: 2
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
