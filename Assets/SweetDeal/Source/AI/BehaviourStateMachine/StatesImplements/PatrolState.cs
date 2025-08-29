@@ -51,7 +51,7 @@ namespace SweetDeal.Source.AI.BehaviourStateMachine.StatesImplements
             {
                 if (!Wait())
                 {
-                    _nextPoint = _patrolPositions[_index];
+                    _nextPoint = _patrolPositions[_index % _patrolPositions.Length];
                     _index = (_index + 1) % _patrolPositions.Length;
                     _agent.SetDestination(_nextPoint);
                 }
