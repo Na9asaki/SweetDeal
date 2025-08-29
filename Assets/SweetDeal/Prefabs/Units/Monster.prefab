@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 2980392104292735249}
   - component: {fileID: 1044927407031860359}
   - component: {fileID: 789340155835251502}
+  - component: {fileID: 5527187703369125883}
   m_Layer: 7
   m_Name: Monster
   m_TagString: Untagged
@@ -140,6 +141,37 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 2
+--- !u!114 &5527187703369125883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4429623283966759405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1470285770
+      Data2: 1277010233
+      Data3: -1445845829
+      Data4: 250455101
+    Path: event:/snd_enemy/snd_enemy_idle
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5887105123663288786
 GameObject:
   m_ObjectHideFlags: 0
