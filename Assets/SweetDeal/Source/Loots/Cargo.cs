@@ -10,6 +10,20 @@ namespace SweetDeal.Source.Loots
 
         public event Action OnAdded;
         public IEnumerable<Bag> Bags => _bags;
+        
+        public int Capacity 
+        {
+            get
+            {
+                int value = 0;
+                foreach (var bag in _bags)
+                {
+                    value += bag.Capacity;
+                }
+
+                return value;
+            }
+        }
 
         public int Count
         {
@@ -74,6 +88,7 @@ namespace SweetDeal.Source.Loots
                     amount -= bag.Count;
                 }
             }
+            OnAdded?.Invoke();
 
             return true;
         }

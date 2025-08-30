@@ -2243,14 +2243,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_C (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 2886493347970738491, guid: 0e2a0f88f62841f42ae86ae323be43bf, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 3678911034757564654, guid: 0e2a0f88f62841f42ae86ae323be43bf, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 6bc5dd5ac5351a743bfd8dc5aef81af4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2854,14 +2846,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7050443006162301815}
     m_Modifications:
-    - target: {fileID: 341908512525724439, guid: f866648d31fd9494093daef232970acf, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 6bc5dd5ac5351a743bfd8dc5aef81af4, type: 2}
-    - target: {fileID: 1510288242704437368, guid: f866648d31fd9494093daef232970acf, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1510288242704437368, guid: f866648d31fd9494093daef232970acf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.869379
@@ -2905,10 +2889,6 @@ PrefabInstance:
     - target: {fileID: 2287353120183323330, guid: f866648d31fd9494093daef232970acf, type: 3}
       propertyPath: m_Name
       value: Wall_B (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2287353120183323330, guid: f866648d31fd9494093daef232970acf, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4887,22 +4867,6 @@ PrefabInstance:
     - target: {fileID: 6246356961622256026, guid: 179f5856ad10c4742ba3e199eb4e7453, type: 3}
       propertyPath: m_Name
       value: SM_WoodBox_6 (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6246356961622256026, guid: 179f5856ad10c4742ba3e199eb4e7453, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 6765625050716975904, guid: 179f5856ad10c4742ba3e199eb4e7453, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.2057095
-      objectReference: {fileID: 0}
-    - target: {fileID: 6765625050716975904, guid: 179f5856ad10c4742ba3e199eb4e7453, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4.20571
-      objectReference: {fileID: 0}
-    - target: {fileID: 6765625050716975904, guid: 179f5856ad10c4742ba3e199eb4e7453, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3.9424324
       objectReference: {fileID: 0}
     - target: {fileID: 6765625050716975904, guid: 179f5856ad10c4742ba3e199eb4e7453, type: 3}
       propertyPath: m_LocalPosition.x

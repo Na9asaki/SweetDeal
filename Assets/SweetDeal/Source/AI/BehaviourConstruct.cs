@@ -17,6 +17,7 @@ namespace SweetDeal.Source.AI
         
         public void Init()
         {
+            GetComponent<NavMeshAgent>().enabled = true;
             Data = new NoiseData();
 
             BehaviourMachine = new BehaviourMachine(

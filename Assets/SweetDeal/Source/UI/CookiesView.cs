@@ -12,7 +12,7 @@ namespace SweetDeal.Source.UI
 
         private void UpdateView()
         {
-            cookieText.text = $"x {cargo.Count}";
+            cookieText.text = $"x {cargo.Count} / {cargo.Capacity}";
         }
         
         private void OnEnable()

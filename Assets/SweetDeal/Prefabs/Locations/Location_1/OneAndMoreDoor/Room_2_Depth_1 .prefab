@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 3703389612062309823}
   - component: {fileID: 8039519295901782210}
   - component: {fileID: 5677028774540829300}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2519,6 +2519,10 @@ PrefabInstance:
       value: Wall_C (3)
       objectReference: {fileID: 0}
     - target: {fileID: 2886493347970738491, guid: 0e2a0f88f62841f42ae86ae323be43bf, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886493347970738491, guid: 0e2a0f88f62841f42ae86ae323be43bf, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -2962,6 +2966,10 @@ PrefabInstance:
     - target: {fileID: 2287353120183323330, guid: f866648d31fd9494093daef232970acf, type: 3}
       propertyPath: m_Name
       value: Wall_B (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2287353120183323330, guid: f866648d31fd9494093daef232970acf, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2287353120183323330, guid: f866648d31fd9494093daef232970acf, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3721,6 +3729,10 @@ PrefabInstance:
       value: Wall_B (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2287353120183323330, guid: f866648d31fd9494093daef232970acf, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2287353120183323330, guid: f866648d31fd9494093daef232970acf, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -3863,6 +3875,10 @@ PrefabInstance:
     - target: {fileID: 2886493347970738491, guid: 0e2a0f88f62841f42ae86ae323be43bf, type: 3}
       propertyPath: m_Name
       value: Wall_C (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886493347970738491, guid: 0e2a0f88f62841f42ae86ae323be43bf, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2886493347970738491, guid: 0e2a0f88f62841f42ae86ae323be43bf, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5132,6 +5148,10 @@ PrefabInstance:
     - target: {fileID: 2287353120183323330, guid: f866648d31fd9494093daef232970acf, type: 3}
       propertyPath: m_Name
       value: Wall_B (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2287353120183323330, guid: f866648d31fd9494093daef232970acf, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2287353120183323330, guid: f866648d31fd9494093daef232970acf, type: 3}
       propertyPath: m_StaticEditorFlags
