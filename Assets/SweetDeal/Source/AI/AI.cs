@@ -1,15 +1,22 @@
 ﻿using System;
+using System.Collections;
 using SweetDeal.Source.AI.BehaviourStateMachine.StatesImplements;
+using SweetDeal.Source.Gadgets;
 using SweetDeal.Source.Stealth;
 using UnityEngine;
 using Grid = SweetDeal.Source.LocationGenerator.Grid;
 
 namespace SweetDeal.Source.AI
 {
-    public class AI : MonoBehaviour, INoiseListener
+    public class AI : MonoBehaviour, INoiseListener, IStunned
     {
+        [SerializeField] private DeadZone deadZone;
+        [SerializeField] private AnimationProvider animationProvider;
+        
         private BehaviourConstruct _construct;
         private Vector2Int _gridPosition;
+        
+        private Coroutine _coroutine;
 
         private void Awake()
         {
@@ -34,6 +41,25 @@ namespace SweetDeal.Source.AI
             {
                 _construct.Data.NoisePosition = soundPosition;
                 _construct.BehaviourMachine.EnterIn<FollowState>();
+            }
+        }
+
+        private IEnumerator StunRoutine(float time)
+        {
+            deadZone.GetComponent<Collider>().enabled = false;
+            animationProvider.Slip();
+            
+            yield return new WaitForSeconds(time);
+            
+            deadZone.GetComponent<Collider>().enabled = true;
+            _coroutine = null;
+        }
+
+        public void Stun(float timeStun)
+        {
+            if (_coroutine == null)
+            {
+                _coroutine = StartCoroutine(StunRoutine(timeStun));
             }
         }
     }

@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 1044927407031860359}
   - component: {fileID: 789340155835251502}
   - component: {fileID: 5527187703369125883}
+  - component: {fileID: 790632501352818976}
   m_Layer: 7
   m_Name: Monster
   m_TagString: Untagged
@@ -68,6 +69,7 @@ Transform:
   m_Children:
   - {fileID: 5663738001266469570}
   - {fileID: 6423534763815527297}
+  - {fileID: 8310265833321269796}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8174199664306785459
@@ -98,6 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59026b418bf47e38fa5a6747e42cca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deadZone: {fileID: 4920809041365623953}
+  animationProvider: {fileID: 790632501352818976}
 --- !u!136 &1044927407031860359
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -174,6 +178,22 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &790632501352818976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4429623283966759405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4927aef7d37a4409896d01e0e9ef1c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  velocityParameter: Velocity
+  killParameter: Kill
+  slipParameter: Slip
 --- !u!1 &5887105123663288786
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,9 +260,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61e9566006a74c9da88dda644d8b2e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handPoint: {fileID: 8310265833321269796}
+  animationProvider: {fileID: 790632501352818976}
   onPlayerKilled:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &8390287523779566129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8310265833321269796}
+  m_Layer: 7
+  m_Name: PlayerHandPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8310265833321269796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390287523779566129}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6365961265919752046}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1338826967521343091
 PrefabInstance:
   m_ObjectHideFlags: 0

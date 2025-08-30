@@ -26,9 +26,14 @@ namespace SweetDeal.Source.GameplaySystems
             _playerController = GetComponent<PlayerController>();
         }
 
-        public void Die()
+        public void Die(Transform parent)
         {
-            _playerController.Deactivate();
+            transform.SetParent(parent);
+            
+            transform.localPosition = Vector3.zero;
+            transform.localRotation = Quaternion.identity;
+            
+            _playerController.SpeedOff();
             PlayerPrefs.SetInt(STRING_KEYS_CONSTRAINTS.PlayerDeadKey, 1);
             PlayerPrefs.Save();
             DataKeeper.DeleteKey(STRING_KEYS_CONSTRAINTS.CookieEquipmentKey);

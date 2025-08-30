@@ -6,10 +6,14 @@ namespace SweetDeal.Source.AI
 {
     public class DeadZone : MonoBehaviour
     {
+        [SerializeField] private Transform handPoint;
+        [SerializeField] private AnimationProvider animationProvider;
+        
         public UnityEvent onPlayerKilled;
         private void OnTriggerEnter(Collider other)
         {
-            other.GetComponent<PlayerDeath>().Die();
+            animationProvider.Kill();
+            other.GetComponent<PlayerDeath>().Die(handPoint);
             onPlayerKilled.Invoke();
         }
     }
