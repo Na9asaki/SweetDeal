@@ -19,4 +19,9 @@ public class Bag
         if (!IsFull)
             Count += amount;
     }
+
+    public void RemoveCookie(int amount)
+    {
+        Count -= amount;
+    }
 }

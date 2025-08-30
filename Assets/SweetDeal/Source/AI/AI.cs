@@ -54,11 +54,13 @@ namespace SweetDeal.Source.AI
         private IEnumerator StunRoutine(float time)
         {
             deadZone.GetComponent<Collider>().enabled = false;
+            GetComponent<NavMeshAgent>().isStopped = true;
             animationProvider.Slip();
             
             yield return new WaitForSeconds(time);
             
             deadZone.GetComponent<Collider>().enabled = true;
+            GetComponent<NavMeshAgent>().isStopped = false;
             _coroutine = null;
         }
 

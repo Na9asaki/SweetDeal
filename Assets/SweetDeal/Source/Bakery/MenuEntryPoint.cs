@@ -22,7 +22,7 @@ namespace SweetDeal.Source.Bakery
             #if UNITY_EDITOR
             DataKeeper.Save(new CookieEquipmentData()
             {
-                cookies = 100
+                cookies = 16
             }, STRING_KEYS_CONSTRAINTS.CookieEquipmentKey);
             #endif
             

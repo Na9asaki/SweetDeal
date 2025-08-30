@@ -18,7 +18,7 @@ namespace SweetDeal.Source.GameplaySystems
         private Door _door;
         private Cargo _cargo;
 
-        private void Awake()
+        private void Start()
         {
             _boostrap = FindAnyObjectByType<Boostrap>();
             _cargo = FindAnyObjectByType<Cargo>();

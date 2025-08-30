@@ -20,6 +20,7 @@ namespace SweetDeal.Source.Bakery.ShopSystem
             Shop.OnEnoughCoins += Activate;
             Shop.OnNoEnoughCoins += Deactivate;
             Shop.OnSalesStarted += Init;
+            Shop.OnCostChange += Check;
         }
 
         private void OnDisable()
@@ -27,6 +28,19 @@ namespace SweetDeal.Source.Bakery.ShopSystem
             Shop.OnEnoughCoins -= Activate;
             Shop.OnNoEnoughCoins -= Deactivate;
             Shop.OnSalesStarted -= Init;
+            Shop.OnCostChange -= Check;
+        }
+
+        private void Check(int fullcost,  int coins)
+        {
+            if (coins < shopCardDefinition.Price)
+            {
+                Deactivate();
+            }
+            else
+            {
+                Activate();
+            }
         }
 
         private void Awake()

@@ -66,6 +66,7 @@ namespace SweetDeal.Source.Loots
 
         public bool Spend(int amount)
         {
+            Debug.Log($"Amount: {amount}");
             int have = 0;
             foreach (var bag in _bags)
             {
@@ -81,16 +82,17 @@ namespace SweetDeal.Source.Loots
             {
                 if (bag.Count >= amount)
                 {
-                    bag.AddCookie(-amount);
+                    bag.RemoveCookie(amount);
                     break;
                 }
                 else
                 {
-                    bag.AddCookie(-bag.Count);
+                    bag.RemoveCookie(bag.Count);
                     amount -= bag.Count;
                 }
             }
             OnAdded?.Invoke();
+            Debug.Log($"Ost: {amount}");
 
             return true;
         }
