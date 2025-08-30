@@ -88,7 +88,6 @@ namespace SweetDeal.Source.LocationGenerator
 
         void GenerateNavigation()
         {
-            _navMeshSurface.RemoveData();
             _navMeshSurface.BuildNavMesh();
         }
         
@@ -139,6 +138,7 @@ namespace SweetDeal.Source.LocationGenerator
             {
                 Destroy(room.gameObject);
             }
+            _navMeshSurface.RemoveData();
         }
     }
 }

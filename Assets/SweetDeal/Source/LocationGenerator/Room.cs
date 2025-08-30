@@ -60,6 +60,7 @@ public class Room : MonoBehaviour
     {
         foreach (var ai in _ais)
         {
+            ai.gameObject.SetActive(true);
             ai.Init();
         }
     }
