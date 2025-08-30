@@ -4,6 +4,7 @@ using SweetDeal.Source.AI.BehaviourStateMachine.StatesImplements;
 using SweetDeal.Source.Gadgets;
 using SweetDeal.Source.Stealth;
 using UnityEngine;
+using UnityEngine.AI;
 using Grid = SweetDeal.Source.LocationGenerator.Grid;
 
 namespace SweetDeal.Source.AI
@@ -32,6 +33,12 @@ namespace SweetDeal.Source.AI
         private void FixedUpdate()
         {
             _construct.BehaviourMachine.Update();
+        }
+
+        public void Stop()
+        {
+            _construct.BehaviourMachine.Exit();
+            GetComponent<NavMeshAgent>().isStopped = true;
         }
 
         public void Alert(Vector3 soundPosition)

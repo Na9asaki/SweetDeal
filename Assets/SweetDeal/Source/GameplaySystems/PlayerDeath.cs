@@ -9,6 +9,7 @@ namespace SweetDeal.Source.GameplaySystems
     public class PlayerDeath : MonoBehaviour
     {
         [SerializeField] private float timeToDeath = 5;
+        [SerializeField] private PlayerAnimatorProvider animatorProvider;
 
         public UnityEvent onDeathStarted;
         
@@ -26,13 +27,16 @@ namespace SweetDeal.Source.GameplaySystems
             _playerController = GetComponent<PlayerController>();
         }
 
-        public void Die(Transform parent)
+        public void Grab(Transform parent)
         {
             transform.SetParent(parent);
-            
             transform.localPosition = Vector3.zero;
-            transform.localRotation = Quaternion.identity;
-            
+        }
+
+        public void Die()
+        {
+            animatorProvider.Idle();
+            animatorProvider.enabled = false;
             _playerController.SpeedOff();
             PlayerPrefs.SetInt(STRING_KEYS_CONSTRAINTS.PlayerDeadKey, 1);
             PlayerPrefs.Save();

@@ -2773,7 +2773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4558279340463207780, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: AvoidObstacles.CollisionFilter.m_Bits
-      value: 193
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 5404728290133854994, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: Lens.FieldOfView
@@ -2912,7 +2912,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.1
+  m_VoxelSize: 0.33333334
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
@@ -3564,6 +3564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDeath: 5
+  animatorProvider: {fileID: 4309970610597162480}
   onDeathStarted:
     m_PersistentCalls:
       m_Calls:

@@ -30,6 +30,11 @@ namespace SweetDeal.Source.Player
             toolsBar.OnGrenadeThrowed -= Throw;
         }
 
+        public void Idle()
+        {
+            animator.SetFloat(velocityParameter, 0);
+        }
+
         public void Slip()
         {
             animator.SetTrigger(slipParameter);
