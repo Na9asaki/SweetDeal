@@ -46,7 +46,6 @@ GameObject:
   - component: {fileID: 2980392104292735249}
   - component: {fileID: 1044927407031860359}
   - component: {fileID: 789340155835251502}
-  - component: {fileID: 5527187703369125883}
   - component: {fileID: 790632501352818976}
   m_Layer: 7
   m_Name: Monster
@@ -147,37 +146,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 2
---- !u!114 &5527187703369125883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4429623283966759405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1470285770
-      Data2: 1277010233
-      Data3: -1445845829
-      Data4: 250455101
-    Path: event:/snd_enemy/snd_enemy_idle
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!114 &790632501352818976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +173,8 @@ GameObject:
   - component: {fileID: 6423534763815527297}
   - component: {fileID: 7838034265090020346}
   - component: {fileID: 4920809041365623953}
+  - component: {fileID: 5196610586268668286}
+  - component: {fileID: 7464380794059542855}
   m_Layer: 10
   m_Name: DeadZone
   m_TagString: Untagged
@@ -265,7 +235,93 @@ MonoBehaviour:
   animationHandGrab: {fileID: 9018342625057088618}
   onPlayerKilled:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7464380794059542855}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5196610586268668286}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5196610586268668286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5887105123663288786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1943492242
+      Data2: 1259640201
+      Data3: -409161311
+      Data4: 1690562392
+    Path: event:/snd_enemy/snd_enemy_growl
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &7464380794059542855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5887105123663288786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1470285770
+      Data2: 1277010233
+      Data3: -1445845829
+      Data4: 250455101
+    Path: event:/snd_enemy/snd_enemy_idle
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &8390287523779566129
 GameObject:
   m_ObjectHideFlags: 0
@@ -3035,6 +3091,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2faef904a7ac3ba4ea5767ca7783b664, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9018342625057088618}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2faef904a7ac3ba4ea5767ca7783b664, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4393184979643110826}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2faef904a7ac3ba4ea5767ca7783b664, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4892948553961973283}
   m_SourcePrefab: {fileID: 100100000, guid: 2faef904a7ac3ba4ea5767ca7783b664, type: 3}
 --- !u!4 &478206525776006748 stripped
 Transform:
@@ -3105,6 +3167,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handPoint: {fileID: 8310265833321269796}
+--- !u!114 &4393184979643110826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2185672819791072034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c52db8919134022afb7c81f8d3a3c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyWalkEvent:
+    Guid:
+      Data1: 218990489
+      Data2: 1173422384
+      Data3: -1108044357
+      Data4: 654808882
+    Path: event:/snd_enemy/snd_enemy_walk
+--- !u!114 &4892948553961973283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2185672819791072034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b81b7f9ab5314f96846a842ff12ff5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyFallingkEvent:
+    Guid:
+      Data1: 1702132969
+      Data2: 1303047755
+      Data3: 607170469
+      Data4: 1172135986
+    Path: event:/snd_enemy/snd_enemy_fall
 --- !u!4 &2395441508771024327 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -5500538550831580236, guid: 2faef904a7ac3ba4ea5767ca7783b664, type: 3}

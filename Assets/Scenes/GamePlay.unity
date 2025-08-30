@@ -923,6 +923,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d3b4ffca1b2bb1e4db032fd86ae23151, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1600094809}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d3b4ffca1b2bb1e4db032fd86ae23151, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1600094810}
   m_SourcePrefab: {fileID: 100100000, guid: d3b4ffca1b2bb1e4db032fd86ae23151, type: 3}
 --- !u!1 &244712080
 GameObject:
@@ -2665,6 +2668,25 @@ MonoBehaviour:
       Data3: -2011032146
       Data4: -1740498433
     Path: event:/snd_PC/snd_pc_fall
+--- !u!114 &1600094810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574667230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e92ced0a3f0074af3ac14e98b2c25cad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getupEvent:
+    Guid:
+      Data1: -1702874905
+      Data2: 1259139519
+      Data3: -142195778
+      Data4: 2040227730
+    Path: event:/snd_PC/snd_pc_getting_up
 --- !u!1 &1638047990
 GameObject:
   m_ObjectHideFlags: 0
@@ -3571,6 +3593,18 @@ MonoBehaviour:
       - m_Target: {fileID: 499185095}
         m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1645319806}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Stop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
