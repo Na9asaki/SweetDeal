@@ -665,7 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b48520806c645cd99fd80840c9c154d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Price: 15
+  Price: 0
   LevelModifier: 1
   _priceView: {fileID: 9050119124894033508}
   onLoadNextLevelDepth:

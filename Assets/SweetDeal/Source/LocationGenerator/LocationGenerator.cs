@@ -88,6 +88,7 @@ namespace SweetDeal.Source.LocationGenerator
 
         void GenerateNavigation()
         {
+            _navMeshSurface.RemoveData();
             _navMeshSurface.BuildNavMesh();
         }
         
