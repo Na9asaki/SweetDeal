@@ -39,7 +39,6 @@ namespace SweetDeal.Source.LocationGenerator
                 var pos = door.Position + door.transform.forward * _grid.CellSize / 2;
                 if (!_grid.IsFree(pos))
                 {
-                    Destroy(door.gameObject);
                     return false;
                 }
                 else
@@ -120,14 +119,16 @@ namespace SweetDeal.Source.LocationGenerator
                 }
             }
 
+            
+            freeDoors.Clear();
+
+            GenerateNavigation();
+            
             foreach (var room in _rooms)
             {
                 room.GenerateLoot(_generatedLootDefinitions);
                 room.GenerateEnemies();
             }
-            freeDoors.Clear();
-
-            GenerateNavigation();
         }
 
         public void Restart()

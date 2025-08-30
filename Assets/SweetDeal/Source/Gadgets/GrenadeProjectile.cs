@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using SweetDeal.Source.Stealth;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,11 +15,20 @@ namespace SweetDeal.Source.Gadgets
         private NoiseSignal _noiseSignal;
         
         public UnityEvent onExplode;
+        bool triggered = false;
+        private Vector3 _roomPosition;
 
         protected override void Awake()
         {
             base.Awake();
             _noiseSignal = GetComponent<NoiseSignal>();
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (triggered) return;
+            triggered = true;
+            
         }
 
         private IEnumerator ExplodeRoutine()

@@ -12,6 +12,7 @@ namespace SweetDeal.Source.Bakery
         [SerializeField] private Shop shop;
         [SerializeField] private GameObject shopPanel;
         [SerializeField] private PlayerContainer playerContainer;
+        [SerializeField] private Animator animator;
         
         private void Awake()
         {
@@ -34,11 +35,17 @@ namespace SweetDeal.Source.Bakery
             }
             shop.Activate();
             shopPanel.SetActive(false);
+
+            if (PlayerPrefs.GetInt(STRING_KEYS_CONSTRAINTS.PlayerDeadKey, 0) == 1)
+            {
+                animator.SetTrigger("WakeUp");
+                PlayerPrefs.SetInt(STRING_KEYS_CONSTRAINTS.PlayerDeadKey, 0);
+                PlayerPrefs.Save();
+            }
         }
 
         public void Raid()
         {
-            //playerContainer.Save();
             LevelLoader.LoadGameplay();
         }
     }

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 public class HeadLookAtCursor : MonoBehaviour
 {
@@ -6,9 +7,22 @@ public class HeadLookAtCursor : MonoBehaviour
     [SerializeField] private Transform lookTarget; // Таргет для Multi-Aim Constraint
     [SerializeField] private float distance = 5f;  // Дистанция "вперёд" от камеры
     [SerializeField] private float smoothTime = 0.1f; // Скорость сглаживания (меньше = быстрее)
+    [SerializeField] private Rig rig;
 
     private Vector3 velocity = Vector3.zero; // Для SmoothDamp
+    
+    private bool isMoving = false;
 
+    public void Activate()
+    {
+        rig.weight = 1f;
+    }
+
+    public void Deactivate()
+    {
+        rig.weight = 0f;
+    }
+    
     private void Update()
     {
         // Получаем позицию курсора в мировых координатах

@@ -1,4 +1,5 @@
-﻿using SweetDeal.Source.Gadgets.Inventory.SpriteConfigurable;
+﻿using System;
+using SweetDeal.Source.Gadgets.Inventory.SpriteConfigurable;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,8 @@ namespace SweetDeal.Source.Gadgets.Inventory
         [SerializeField] private Image slots;
         [SerializeField] private GadgetDefinition[] _views;
         [SerializeField] private ToolsBar toolsBar;
-        [SerializeField] private Sprite defaultSprite;
+        
+        private Color _initialColor;
         
         private void OnEnable()
         {
@@ -21,14 +23,21 @@ namespace SweetDeal.Source.Gadgets.Inventory
             toolsBar.OnSelected -= Swap;
         }
 
+        private void Awake()
+        {
+            _initialColor = slots.color;
+        }
+
         private void Swap(Gadget gadget)
         {
             if (gadget == null)
             {
-                slots.sprite = defaultSprite;
+                slots.sprite = null;
+                slots.color = Color.clear;
                 return;
             }
 
+            slots.color = _initialColor;
             foreach (var view in _views)
             {
                 if (gadget.Definition == view)

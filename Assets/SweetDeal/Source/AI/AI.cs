@@ -1,15 +1,23 @@
 ﻿using System;
+using System.Collections;
 using SweetDeal.Source.AI.BehaviourStateMachine.StatesImplements;
+using SweetDeal.Source.Gadgets;
 using SweetDeal.Source.Stealth;
 using UnityEngine;
+using UnityEngine.AI;
 using Grid = SweetDeal.Source.LocationGenerator.Grid;
 
 namespace SweetDeal.Source.AI
 {
-    public class AI : MonoBehaviour, INoiseListener
+    public class AI : MonoBehaviour, INoiseListener, IStunned
     {
+        [SerializeField] private DeadZone deadZone;
+        [SerializeField] private AnimationProvider animationProvider;
+        
         private BehaviourConstruct _construct;
         private Vector2Int _gridPosition;
+        
+        private Coroutine _coroutine;
 
         private void Awake()
         {
@@ -19,8 +27,7 @@ namespace SweetDeal.Source.AI
         private void Start()
         {
             _construct.BehaviourMachine.EnterIn<PatrolState>();
-            var door = transform.root.GetComponent<Room>().Entry;
-            _gridPosition = Grid.WorldToGrid(door.Position + door.transform.forward * Grid.cellSize / 2);
+            _gridPosition = Grid.WorldToGrid(transform.position);
         }
 
         private void FixedUpdate()
@@ -28,14 +35,38 @@ namespace SweetDeal.Source.AI
             _construct.BehaviourMachine.Update();
         }
 
+        public void Stop()
+        {
+            _construct.BehaviourMachine.Exit();
+            GetComponent<NavMeshAgent>().isStopped = true;
+        }
+
         public void Alert(Vector3 soundPosition)
         {
             var soundGridPos = Grid.WorldToGrid(soundPosition);
-            Debug.Log($"{soundGridPos} | {_gridPosition}");
             if (soundGridPos == _gridPosition)
             {
                 _construct.Data.NoisePosition = soundPosition;
                 _construct.BehaviourMachine.EnterIn<FollowState>();
+            }
+        }
+
+        private IEnumerator StunRoutine(float time)
+        {
+            deadZone.GetComponent<Collider>().enabled = false;
+            animationProvider.Slip();
+            
+            yield return new WaitForSeconds(time);
+            
+            deadZone.GetComponent<Collider>().enabled = true;
+            _coroutine = null;
+        }
+
+        public void Stun(float timeStun)
+        {
+            if (_coroutine == null)
+            {
+                _coroutine = StartCoroutine(StunRoutine(timeStun));
             }
         }
     }

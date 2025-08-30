@@ -34,6 +34,7 @@ namespace SweetDeal.Source.AI.BehaviourStateMachine.StatesImplements
 
         public void Enter()
         {
+            _index %= _patrolPositions.Length;
             _nextPoint = _patrolPositions[_index];
             _index++;
             

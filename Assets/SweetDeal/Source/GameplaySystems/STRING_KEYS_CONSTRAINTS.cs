@@ -6,5 +6,6 @@
         public static string EquipmentKey = "Equipment";
         public static string HeroImproveKey = "HeroImprove";
         public static string PlayerCoinsKey = "PlayerCoins";
+        public static string PlayerDeadKey = "PlayerDead";
     }
 }

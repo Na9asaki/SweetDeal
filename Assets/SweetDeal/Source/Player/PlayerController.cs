@@ -18,6 +18,13 @@ namespace SweetDeal.Source.Player
         {
             _playerInteraction.Init(input);
         }
+
+        public void SpeedOff()
+        {
+            _thirdPersonController.SprintSpeed = 0f;
+            _thirdPersonController.MoveSpeed = 0f;
+            GetComponent<CharacterController>().enabled = false;
+        }
         
         public void Activate()
         {
