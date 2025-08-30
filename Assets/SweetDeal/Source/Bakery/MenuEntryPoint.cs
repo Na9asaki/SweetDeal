@@ -26,6 +26,8 @@ namespace SweetDeal.Source.Bakery
             }, STRING_KEYS_CONSTRAINTS.CookieEquipmentKey);
             #endif
             
+            FindAnyObjectByType<PlayerCoinsView>().Init();
+            
             playerContainer.Init();
             playerEquipmentAndImprovementStatus.Init();
             var cookieData = DataKeeper.Load<CookieEquipmentData>(STRING_KEYS_CONSTRAINTS.CookieEquipmentKey, true);
@@ -33,6 +35,7 @@ namespace SweetDeal.Source.Bakery
             {
                 playerCoins.Add(cookieData.cookies);
             }
+            
             shop.Activate();
             shopPanel.SetActive(false);
 

@@ -9,7 +9,7 @@ namespace SweetDeal.Source.Bakery
         [SerializeField] private PlayerCoins playerCoins;
         [SerializeField] private TMP_Text coinText;
 
-        private void OnEnable()
+        public void Init()
         {
             playerCoins.OnChange += UpdateInfo;
         }

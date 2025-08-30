@@ -42,6 +42,8 @@ namespace SweetDeal.Source.Loots
         public void AddBag(BagScriptableObject bag)
         {
             _bags.Add(new Bag(bag));
+            
+            OnAdded?.Invoke();
         }
 
         public void Fill(int amount)
