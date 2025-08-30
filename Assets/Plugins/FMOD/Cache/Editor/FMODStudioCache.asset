@@ -150,7 +150,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638921894955847603
+  lastModified: 638921918966255513
   FileSizes: []
   Exists: 1
 --- !u!114 &-6108806805050192677
@@ -397,6 +397,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 11888
+--- !u!114 &-3134082541501617620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/snd_PC/snd_jar_throw
+  m_EditorClassIdentifier: 
+  Path: event:/snd_PC/snd_jar_throw
+  Guid:
+    Data1: 1998326575
+    Data2: 1089431489
+    Data3: -1679106661
+    Data4: -1487302476
+  Banks:
+  - {fileID: -6251912829148813130}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 943
 --- !u!114 &-2850518387436251927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -627,6 +654,7 @@ MonoBehaviour:
   - {fileID: -5696829841253001933}
   - {fileID: -803466935365602097}
   - {fileID: -5312104256316936077}
+  - {fileID: -3134082541501617620}
   EditorParameters:
   - {fileID: 8454519786651094332}
   MasterBanks:
@@ -634,7 +662,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 3947635370847002615}
   cacheVersion: 131847
-  cacheTime: 638921894955886758
+  cacheTime: 638921918966288851
   SerializableEventsDict:
   - key: event:/amb/2D/amb_dungeon
     index: 0
@@ -692,6 +720,8 @@ MonoBehaviour:
     index: 26
   - key: event:/snd_enemy/snd_enemy_fall
     index: 27
+  - key: event:/snd_PC/snd_jar_throw
+    index: 28
 --- !u!114 &1145622500636616921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,10 +818,10 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638921894955886758
+  lastModified: 638921918966288851
   FileSizes:
   - Name: 
-    Value: 2208
+    Value: 2248
   Exists: 1
 --- !u!114 &4218927383012609416
 MonoBehaviour:

@@ -1,6 +1,7 @@
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using SweetDeal.Source.Bakery;
 
 public class FootstepAudioController : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class FootstepAudioController : MonoBehaviour
     [SerializeField] private GameObject cargoObject; // Ссылка на объект с cargo скриптом
     [SerializeField] private string cargoObjectName = ""; // Имя объекта с cargo скриптом для поиска
     [SerializeField] private string cargoScriptName = "cargo"; // Имя cargo скрипта
+    [SerializeField] private PlayerContainer playerContainer; // Ссылка на PlayerContainer для проверки ботинок
     
     private System.Reflection.FieldInfo cookieCountField;
     private System.Reflection.PropertyInfo cookieCountProperty;
@@ -28,6 +30,16 @@ public class FootstepAudioController : MonoBehaviour
     {
         // Находим cargo скрипт
         FindCargoScript();
+        
+        // Находим PlayerContainer если не назначен
+        if (playerContainer == null)
+        {
+            playerContainer = FindObjectOfType<PlayerContainer>();
+            if (playerContainer == null)
+            {
+                Debug.LogWarning("PlayerContainer не найден! Проверка ботинок будет отключена.");
+            }
+        }
     }
     
     void Update()
@@ -232,10 +244,24 @@ public class FootstepAudioController : MonoBehaviour
         return parameterValue;
     }
     
+    // Проверяем, куплены ли ботинки
+    private bool AreBootsPurchased()
+    {
+        if (playerContainer == null) return false;
+        return playerContainer.BootsBoost > 0f;
+    }
+    
     // Метод для вызова из анимации - шаг при ходьбе
     public void stepWalk()
     {
         Debug.Log("stepWalk() вызван!");
+        
+        // Не воспроизводим звук, если куплены ботинки
+        if (AreBootsPurchased())
+        {
+            Debug.Log("Ботинки куплены - звук шагов отключен");
+            return;
+        }
         
         if (walkStepEvent.IsNull)
         {
@@ -274,6 +300,13 @@ public class FootstepAudioController : MonoBehaviour
     public void stepRun()
     {
         Debug.Log("stepRun() вызван!");
+        
+        // Не воспроизводим звук, если куплены ботинки
+        if (AreBootsPurchased())
+        {
+            Debug.Log("Ботинки куплены - звук шагов отключен");
+            return;
+        }
         
         if (runStepEvent.IsNull)
         {
