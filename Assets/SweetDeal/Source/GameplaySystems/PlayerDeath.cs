@@ -29,6 +29,8 @@ namespace SweetDeal.Source.GameplaySystems
         public void Die()
         {
             _playerController.Deactivate();
+            PlayerPrefs.SetInt(STRING_KEYS_CONSTRAINTS.PlayerDeadKey, 1);
+            PlayerPrefs.Save();
             DataKeeper.DeleteKey(STRING_KEYS_CONSTRAINTS.CookieEquipmentKey);
             DataKeeper.DeleteKey(STRING_KEYS_CONSTRAINTS.EquipmentKey);
             DataKeeper.DeleteKey(STRING_KEYS_CONSTRAINTS.PlayerCoinsKey);
