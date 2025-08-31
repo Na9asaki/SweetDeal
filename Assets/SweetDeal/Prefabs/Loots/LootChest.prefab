@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4360332554142547339}
   - component: {fileID: 7549795926502970673}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: snd_chest_open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8021861541979438418}
   - component: {fileID: 6081964443850547611}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: WoodChest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 3300615502098622256}
   - component: {fileID: 2195909719389286379}
   - component: {fileID: 3646108035696806503}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 2339839800096224057}
   - component: {fileID: 1532550807693162711}
   - component: {fileID: 1902866911809009808}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 453935538457454422}
   - component: {fileID: 2437254490564501443}
   - component: {fileID: 3054106944938432536}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 1573199306152206805}
   - component: {fileID: 1133106062431926136}
   - component: {fileID: 7237885264571956830}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 8236557985755793212}
   - component: {fileID: 6677957503514986898}
   - component: {fileID: 6190754483244191617}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: LootChest
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -564,7 +564,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8253366353413826544}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.99981457, z: -0, w: -0.019257499}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 2.12, y: 0, z: 5.44}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
@@ -574,7 +574,7 @@ Transform:
   - {fileID: 8021861541979438418}
   - {fileID: 5272880455151267857}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -182.207, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &3861619827413061728
 Animator:
   serializedVersion: 7
@@ -616,8 +616,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.5, y: 1, z: 4}
-  m_Center: {x: 0, y: 1, z: 1}
+  m_Size: {x: 6, y: 1, z: 6}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &6677957503514986898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,6 +630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 767ea31afd5a41588ad2983c148a0745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colliderEnabled: 0
   onInteractionEnteredUnityEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -735,8 +736,16 @@ PrefabInstance:
       value: Animated PBR Chest _Fx_D
       objectReference: {fileID: 0}
     - target: {fileID: 2395224567168844716, guid: 890ae7669926a2848bc4d3e31b3e0872, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395224567168844716, guid: 890ae7669926a2848bc4d3e31b3e0872, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395224568040358671, guid: 890ae7669926a2848bc4d3e31b3e0872, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

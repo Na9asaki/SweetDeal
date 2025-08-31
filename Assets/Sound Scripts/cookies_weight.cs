@@ -35,34 +35,7 @@ public class FootstepAudioController : MonoBehaviour
         if (playerContainer == null)
         {
             playerContainer = FindObjectOfType<PlayerContainer>();
-            if (playerContainer == null)
-            {
-                Debug.LogWarning("PlayerContainer не найден! Проверка ботинок будет отключена.");
-            }
-        }
-    }
-    
-    void Update()
-    {
-        // Тестовые клавиши для проверки вызова методов
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            Debug.Log("Клавиша 1 нажата - тестируем stepWalk");
-            stepWalk();
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            Debug.Log("Клавиша 2 нажата - тестируем stepRun");
-            stepRun();
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            Debug.Log("Клавиша 3 нажата - проверяем Animation Events");
-            Debug.Log("Убедитесь, что Animation Events настроены правильно!");
-            Debug.Log("Function должна быть: stepWalk или stepRun");
-            Debug.Log("Object должен указывать на этот GameObject: " + gameObject.name);
+            
         }
     }
     
@@ -82,16 +55,7 @@ public class FootstepAudioController : MonoBehaviour
             if (cargoComponent != null)
             {
                 SetupCookieAccess();
-                Debug.Log($"Cargo компонент найден: {cargoComponent.GetType().Name} на объекте {cargoObject.name}");
             }
-            else
-            {
-                Debug.LogWarning($"Cargo скрипт не найден на объекте {cargoObject.name}!");
-            }
-        }
-        else
-        {
-            Debug.LogError("Объект с cargo скриптом не найден! Назначьте его вручную или укажите имя объекта.");
         }
     }
     
@@ -103,7 +67,6 @@ public class FootstepAudioController : MonoBehaviour
             GameObject foundByName = GameObject.Find(cargoObjectName);
             if (foundByName != null)
             {
-                Debug.Log($"Найден объект по имени: {cargoObjectName}");
                 return foundByName;
             }
         }
@@ -115,7 +78,6 @@ public class FootstepAudioController : MonoBehaviour
             Component cargoComp = FindCargoComponent(obj);
             if (cargoComp != null)
             {
-                Debug.Log($"Найден cargo скрипт на объекте: {obj.name}");
                 return obj;
             }
         }
@@ -130,7 +92,6 @@ public class FootstepAudioController : MonoBehaviour
                 Component cargoComp = FindCargoComponent(found);
                 if (cargoComp != null)
                 {
-                    Debug.Log($"Найден cargo скрипт на объекте с общим именем: {name}");
                     return found;
                 }
             }
@@ -174,7 +135,6 @@ public class FootstepAudioController : MonoBehaviour
             cookieCountField = cargoType.GetField(fieldName, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
             if (cookieCountField != null)
             {
-                Debug.Log($"Найдено поле для печенья: {fieldName}");
                 return;
             }
         }
@@ -185,12 +145,9 @@ public class FootstepAudioController : MonoBehaviour
             cookieCountProperty = cargoType.GetProperty(propName, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
             if (cookieCountProperty != null)
             {
-                Debug.Log($"Найдено свойство для печенья: {propName}");
                 return;
             }
         }
-        
-        Debug.LogWarning("Поле/свойство для количества печенья не найдено!");
     }
     
     private int GetCookieCount()
@@ -220,13 +177,10 @@ public class FootstepAudioController : MonoBehaviour
     {
         int cookieCount = GetCookieCount();
         
-        // Детальное логирование для отладки
-        Debug.Log($"Cookie Count: {cookieCount}, Min: {minCookieValue}, Max: {maxCookieValue}");
         
         // Проверяем валидность диапазона
         if (maxCookieValue <= minCookieValue)
         {
-            Debug.LogWarning("Неверный диапазон печенья! Max должен быть больше Min.");
             return minParameterValue;
         }
         
@@ -239,7 +193,6 @@ public class FootstepAudioController : MonoBehaviour
         // Ограничиваем значение в допустимых пределах
         parameterValue = Mathf.Clamp(parameterValue, minParameterValue, maxParameterValue);
         
-        Debug.Log($"Normalized: {normalizedValue:F3}, Parameter: {parameterValue:F3}");
         
         return parameterValue;
     }
@@ -254,30 +207,22 @@ public class FootstepAudioController : MonoBehaviour
     // Метод для вызова из анимации - шаг при ходьбе
     public void stepWalk()
     {
-        Debug.Log("stepWalk() вызван!");
         
         // Не воспроизводим звук, если куплены ботинки
         if (AreBootsPurchased())
         {
-            Debug.Log("Ботинки куплены - звук шагов отключен");
             return;
         }
         
         if (walkStepEvent.IsNull)
         {
-            Debug.LogError("Walk Step Event не назначен в инспекторе!");
             return;
         }
-        
-        // ВРЕМЕННО: Используем простой способ как в тестовом скрипте
-        Debug.Log("Пробуем простой PlayOneShot...");
         RuntimeManager.PlayOneShot(walkStepEvent);
-        Debug.Log("PlayOneShot выполнен для walkStep");
         
         // Если нужны параметры, добавим их отдельно
         if (!string.IsNullOrEmpty(cookieParameterName))
         {
-            Debug.Log("Пробуем с параметрами...");
             try
             {
                 float cookieParam = CalculateCookieParameter();
@@ -287,7 +232,6 @@ public class FootstepAudioController : MonoBehaviour
                 walkInstance.start();
                 walkInstance.release();
                 
-                Debug.Log($"Параметрическая версия: печенье={GetCookieCount()}, параметр={cookieParam:F3}");
             }
             catch (System.Exception e)
             {
@@ -299,30 +243,23 @@ public class FootstepAudioController : MonoBehaviour
     // Метод для вызова из анимации - шаг при беге
     public void stepRun()
     {
-        Debug.Log("stepRun() вызван!");
         
         // Не воспроизводим звук, если куплены ботинки
         if (AreBootsPurchased())
         {
-            Debug.Log("Ботинки куплены - звук шагов отключен");
             return;
         }
         
         if (runStepEvent.IsNull)
         {
-            Debug.LogError("Run Step Event не назначен в инспекторе!");
             return;
         }
         
-        // ВРЕМЕННО: Используем простой способ как в тестовом скрипте
-        Debug.Log("Пробуем простой PlayOneShot...");
         RuntimeManager.PlayOneShot(runStepEvent);
-        Debug.Log("PlayOneShot выполнен для runStep");
         
         // Если нужны параметры, добавим их отдельно
         if (!string.IsNullOrEmpty(cookieParameterName))
         {
-            Debug.Log("Пробуем с параметрами...");
             try
             {
                 float cookieParam = CalculateCookieParameter();
@@ -332,7 +269,6 @@ public class FootstepAudioController : MonoBehaviour
                 runInstance.start();
                 runInstance.release();
                 
-                Debug.Log($"Параметрическая версия: печенье={GetCookieCount()}, параметр={cookieParam:F3}");
             }
             catch (System.Exception e)
             {
@@ -353,7 +289,6 @@ public class FootstepAudioController : MonoBehaviour
                 stepRun();
                 break;
             default:
-                Debug.LogWarning($"Неизвестный тип шага: {stepType}");
                 break;
         }
     }

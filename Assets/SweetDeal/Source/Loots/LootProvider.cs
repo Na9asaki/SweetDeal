@@ -18,6 +18,7 @@ namespace SweetDeal.Source.Loots
 
         private void Supply(Loot loot)
         {
+            Debug.Log($"EBANIY CHEST: {loot.Amount}");
             _cargo.Fill(loot.Amount);
         }
     }

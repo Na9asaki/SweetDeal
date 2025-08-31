@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3895540942357888309}
   - component: {fileID: 3776876243483157039}
   - component: {fileID: 9074395033297497557}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Nails
   m_TagString: Untagged
   m_Icon: {fileID: 0}

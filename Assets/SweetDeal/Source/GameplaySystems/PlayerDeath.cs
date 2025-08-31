@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using SweetDeal.Source.Player;
 using SweetDeal.Source.Scenes;
+using SweetDeal.Source.UI;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,6 +11,7 @@ namespace SweetDeal.Source.GameplaySystems
     {
         [SerializeField] private float timeToDeath = 5;
         [SerializeField] private PlayerAnimatorProvider animatorProvider;
+        [SerializeField] private DarkScreen darkScreen;
 
         public UnityEvent onDeathStarted;
         
@@ -35,7 +37,8 @@ namespace SweetDeal.Source.GameplaySystems
 
         public void Die()
         {
-            animatorProvider.Idle();
+            animatorProvider.Die();
+            darkScreen.Activate();
             animatorProvider.enabled = false;
             _playerController.SpeedOff();
             PlayerPrefs.SetInt(STRING_KEYS_CONSTRAINTS.PlayerDeadKey, 1);

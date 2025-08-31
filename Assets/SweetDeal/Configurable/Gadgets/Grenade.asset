@@ -16,5 +16,5 @@ MonoBehaviour:
   <Name>k__BackingField: Grenade
   <Description>k__BackingField: Throw it
   <Projectile>k__BackingField: {fileID: 1026852932564763207, guid: 2b97696fb6bb25148a6eb5ac0c5e645b, type: 3}
-  <ThrowForce>k__BackingField: 8
+  <ThrowForce>k__BackingField: 10
   <ThrowHeight>k__BackingField: 3

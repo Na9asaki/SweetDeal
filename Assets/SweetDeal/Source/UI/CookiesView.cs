@@ -16,14 +16,14 @@ namespace SweetDeal.Source.UI
             cookieText.text = $"x {cargo.Count} / {cargo.Capacity}";
         }
         
-        private void OnEnable()
+        public void Init()
         {
-            cargo.OnAdded += UpdateView;
+            cargo.OnChange += UpdateView;
         }
 
         private void OnDisable()
         {
-            cargo.OnAdded -= UpdateView;
+            cargo.OnChange -= UpdateView;
         }
     }
 }

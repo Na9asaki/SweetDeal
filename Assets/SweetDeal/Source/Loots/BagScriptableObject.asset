@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82e72fd97dd503a43a4f9500a7e0914d, type: 3}
   m_Name: BagScriptableObject
   m_EditorClassIdentifier: 
-  <Capacity>k__BackingField: 25
+  <Capacity>k__BackingField: 10

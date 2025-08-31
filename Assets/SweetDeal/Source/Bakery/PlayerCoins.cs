@@ -1,6 +1,7 @@
 ﻿using System;
 using SweetDeal.Source.GameplaySystems;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace SweetDeal.Source.Bakery
 {
@@ -10,6 +11,7 @@ namespace SweetDeal.Source.Bakery
         public int Coins { get; private set; }
         
         public event Action<int> OnChange;
+        public UnityEvent OnTaskComplete;
 
         public bool Spend(int cost)
         {
@@ -25,6 +27,7 @@ namespace SweetDeal.Source.Bakery
         public void Add(int amount)
         {
             Coins += amount;
+            if (Coins >= goal) OnTaskComplete?.Invoke();
             OnChange?.Invoke(Coins);
         }
 

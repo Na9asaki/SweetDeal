@@ -8,7 +8,8 @@ namespace SweetDeal.Source.Loots
     {
         private List<Bag> _bags = new List<Bag>();
 
-        public event Action OnAdded;
+        public event Action OnChange;
+        public event Action<int> OnAdded;
         public IEnumerable<Bag> Bags => _bags;
         
         public int Capacity 
@@ -43,30 +44,33 @@ namespace SweetDeal.Source.Loots
         {
             _bags.Add(new Bag(bag));
             
-            OnAdded?.Invoke();
+            OnChange?.Invoke();
         }
 
         public void Fill(int amount)
         {
+            int addedValue = 0;
             foreach (var bag in _bags)
             {
-                if (bag.FreeCapacity <= amount)
+                if (bag.FreeCapacity < amount)
                 {
+                    addedValue += bag.FreeCapacity;
                     bag.AddCookie(bag.FreeCapacity);
                     amount -= bag.FreeCapacity;
                 }
                 else
                 {
+                    addedValue += amount;
                     bag.AddCookie(amount);
                     break;
                 }
             }
-            OnAdded?.Invoke();
+            OnAdded?.Invoke(addedValue);
+            OnChange?.Invoke();
         }
 
         public bool Spend(int amount)
         {
-            Debug.Log($"Amount: {amount}");
             int have = 0;
             foreach (var bag in _bags)
             {
@@ -91,8 +95,7 @@ namespace SweetDeal.Source.Loots
                     amount -= bag.Count;
                 }
             }
-            OnAdded?.Invoke();
-            Debug.Log($"Ost: {amount}");
+            OnChange?.Invoke();
 
             return true;
         }

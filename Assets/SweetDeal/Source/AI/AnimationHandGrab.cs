@@ -16,6 +16,7 @@ namespace SweetDeal.Source.AI
 
         public void Grab()
         {
+            _death.transform.forward = transform.parent.parent.position - _death.transform.position;
             _death.Grab(handPoint);
         }
     }

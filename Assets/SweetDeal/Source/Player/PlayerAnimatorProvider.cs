@@ -35,6 +35,11 @@ namespace SweetDeal.Source.Player
             animator.SetFloat(velocityParameter, 0);
         }
 
+        public void Die()
+        {
+            animator.SetTrigger("Die");
+        }
+
         public void Slip()
         {
             animator.SetTrigger(slipParameter);

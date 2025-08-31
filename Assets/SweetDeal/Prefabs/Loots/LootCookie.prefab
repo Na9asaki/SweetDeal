@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2133316461779545891}
   - component: {fileID: 8851052515849550280}
   - component: {fileID: 167787731621992595}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 3960712883248062796}
   - component: {fileID: 9046818108781860207}
   - component: {fileID: 5026896182118800516}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 4657475488932268235}
   - component: {fileID: 8790206315327883264}
   - component: {fileID: 7646780263568157818}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: LootCookie
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -355,7 +355,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3, y: 1, z: 3}
+  m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6694651947217405323
 GameObject:
@@ -367,7 +367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8901011215644365289}
   - component: {fileID: 2350545457389748564}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: snd_cookie_pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 7495378356264310964}
   - component: {fileID: 4853732102714011255}
   - component: {fileID: 6201764977507514029}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,6 +547,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d91c9b53c20395044979c7a8d96c17a8, type: 3}
       propertyPath: m_Name
       value: Cookie
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d91c9b53c20395044979c7a8d96c17a8, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

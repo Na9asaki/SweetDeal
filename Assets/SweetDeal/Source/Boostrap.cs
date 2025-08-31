@@ -2,6 +2,7 @@
 using SweetDeal.Source.GameplaySystems;
 using SweetDeal.Source.LocationGenerator;
 using SweetDeal.Source.Player;
+using SweetDeal.Source.UI;
 using UnityEngine;
 
 namespace SweetDeal.Source
@@ -15,6 +16,7 @@ namespace SweetDeal.Source
         [SerializeField] private DataEntryPoint _dataEntryPoint;
         
         [SerializeField] private ToolsController _toolsController;
+        [SerializeField] private CookiesView  _cookiesView;
         
         private PCInput _input;
         private Vector3 _spawnPoint;
@@ -25,6 +27,8 @@ namespace SweetDeal.Source
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            
+            _cookiesView.Init();
             
             _input = new PCInput();
             _playerController.Init(_input);
