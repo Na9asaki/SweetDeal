@@ -9,8 +9,12 @@ namespace SweetDeal.Source.Loots
         public int Amount => amount;
         public static event Action<Loot> OnLootCollected;
 
+        private bool _collected = false;
+
         protected override void InteractWith()
         {
+            if (_collected) return;
+            _collected = true;
             OnLootCollected?.Invoke(this);
         }
     }

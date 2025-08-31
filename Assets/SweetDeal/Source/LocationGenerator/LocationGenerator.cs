@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using SweetDeal.Source.LocationGenerator.Configs;
 using Unity.AI.Navigation;
 using UnityEngine;
@@ -16,6 +18,7 @@ namespace SweetDeal.Source.LocationGenerator
         [SerializeField] private float _doorTreshold;
         
         private List<Room> _rooms =  new List<Room>();
+        public event Action RestartComplete;
         
         void GenerateHub(LocationScriptableObject locationInfo, Door mainDoor, List<Door> doors)
         {
@@ -107,6 +110,7 @@ namespace SweetDeal.Source.LocationGenerator
                 freeDoors.RemoveAt(nextDoor);
                 if (GenerateRoom(locationInfo, door, count, freeDoors, _rooms))
                 {
+                    Debug.Log("Room generated");
                     count--;
                 }
 
@@ -118,17 +122,11 @@ namespace SweetDeal.Source.LocationGenerator
                     break;
                 }
             }
-
+            
             
             freeDoors.Clear();
 
-            GenerateNavigation();
-            
-            foreach (var room in _rooms)
-            {
-                room.GenerateLoot(_generatedLootDefinitions);
-                room.GenerateEnemies();
-            }
+            StartCoroutine(Rebuild());
         }
 
         public void Restart()
@@ -138,7 +136,20 @@ namespace SweetDeal.Source.LocationGenerator
             {
                 Destroy(room.gameObject);
             }
+            _rooms.Clear();
             _navMeshSurface.RemoveData();
+        }
+
+        private IEnumerator Rebuild()
+        {
+            yield return null;
+            GenerateNavigation();
+            foreach (var room in _rooms)
+            {
+                room.GenerateLoot(_generatedLootDefinitions);
+                room.GenerateEnemies();
+            }
+            RestartComplete?.Invoke();
         }
     }
 }

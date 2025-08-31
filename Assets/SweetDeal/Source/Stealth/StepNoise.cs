@@ -51,12 +51,8 @@ namespace SweetDeal.Source.Stealth
         private void Activate()
         {
             float power = 0;
-            int capacity = 0;
-            foreach (var bag in _cargo.Bags)
-            {
-                capacity += bag.Capacity;
-                power += bag.Count;
-            }
+            int capacity = _cargo.Capacity;
+            power += _cargo.Count;
 
             power /= capacity;
             _coroutine = StartCoroutine(StepNoiseRoutine(power));

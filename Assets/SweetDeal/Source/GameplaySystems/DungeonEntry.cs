@@ -29,11 +29,7 @@ namespace SweetDeal.Source.GameplaySystems
         {
             var cargo = FindAnyObjectByType<Cargo>();
             var toolsBar = FindAnyObjectByType<ToolsBar>();
-            int amount = 0;
-            foreach (var bag in cargo.Bags)
-            {
-                amount += bag.Count;
-            }
+            int amount = cargo.Count;
             CookieEquipmentData data = new()
             {
                 cookies = amount

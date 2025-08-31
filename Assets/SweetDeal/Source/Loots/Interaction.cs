@@ -23,6 +23,7 @@ namespace SweetDeal.Source.Loots
         {
             GetComponent<Collider>().enabled = _colliderEnabled;
             onInteractionUsedUnityEvent?.Invoke();
+            OnLootExited?.Invoke();
             InteractWith();
         }
         

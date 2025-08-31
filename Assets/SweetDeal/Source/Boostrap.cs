@@ -1,4 +1,5 @@
-﻿using SweetDeal.Source.Gadgets.Inventory;
+﻿using System;
+using SweetDeal.Source.Gadgets.Inventory;
 using SweetDeal.Source.GameplaySystems;
 using SweetDeal.Source.LocationGenerator;
 using SweetDeal.Source.Player;
@@ -45,11 +46,21 @@ namespace SweetDeal.Source
 
         private void Run()
         {
-            var definition = _depthLevel.GetLocationDefinition();
-            
             _locationGenerator.Restart();
-            
+            var definition = _depthLevel.GetLocationDefinition();
             _locationGenerator.Generate(definition, _startDoor);
+            
+            
+            
+        }
+
+        private void OnEnable()
+        {
+            _locationGenerator.RestartComplete += Continue;
+        }
+
+        private void Continue()
+        {
 
             _input.Enable();
             _playerController.Activate();

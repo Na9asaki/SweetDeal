@@ -6,64 +6,38 @@ namespace SweetDeal.Source.Loots
 {
     public class Cargo : MonoBehaviour
     {
-        private List<Bag> _bags = new List<Bag>();
+        private int _bagCount;
+        private int _bagCapacity;
+        private int _counts;
 
         public event Action OnChange;
         public event Action<int> OnAdded;
-        public IEnumerable<Bag> Bags => _bags;
         
-        public int Capacity 
-        {
-            get
-            {
-                int value = 0;
-                foreach (var bag in _bags)
-                {
-                    value += bag.Capacity;
-                }
+        public int Capacity => _bagCount * _bagCapacity;
 
-                return value;
-            }
-        }
-
-        public int Count
-        {
-            get
-            {
-                int temp = 0;
-                foreach (var bag in _bags)
-                {
-                    temp += bag.Count;
-                }
-                Debug.Log(temp);
-                return temp;
-            }
-        }
+        public int Count => _counts;
+        
+        public int Free => Capacity - _counts;
 
         public void AddBag(BagScriptableObject bag)
         {
-            _bags.Add(new Bag(bag));
-            
+            _bagCount++;
+            _bagCapacity = bag.Capacity;
             OnChange?.Invoke();
         }
 
         public void Fill(int amount)
         {
             int addedValue = 0;
-            foreach (var bag in _bags)
+            if (Free >= amount)
             {
-                if (bag.FreeCapacity < amount)
-                {
-                    addedValue += bag.FreeCapacity;
-                    bag.AddCookie(bag.FreeCapacity);
-                    amount -= bag.FreeCapacity;
-                }
-                else
-                {
-                    addedValue += amount;
-                    bag.AddCookie(amount);
-                    break;
-                }
+                addedValue = amount;
+                _counts += amount;
+            }
+            else
+            {
+                addedValue = Free;
+                _counts += Free;
             }
             OnAdded?.Invoke(addedValue);
             OnChange?.Invoke();
@@ -71,33 +45,14 @@ namespace SweetDeal.Source.Loots
 
         public bool Spend(int amount)
         {
-            int have = 0;
-            foreach (var bag in _bags)
+            if (_counts >= amount)
             {
-                have += bag.Count;
+                _counts -= amount;
+                OnChange?.Invoke();
+                return true;
             }
 
-            if (have < amount)
-            {
-                return false;
-            }
-            
-            foreach (var bag in _bags)
-            {
-                if (bag.Count >= amount)
-                {
-                    bag.RemoveCookie(amount);
-                    break;
-                }
-                else
-                {
-                    bag.RemoveCookie(bag.Count);
-                    amount -= bag.Count;
-                }
-            }
-            OnChange?.Invoke();
-
-            return true;
+            return false;
         }
     }
 }
