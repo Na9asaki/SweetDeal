@@ -24,7 +24,7 @@ namespace SweetDeal.Source.LocationGenerator
         {
             int hubIndex = Random.Range(0, locationInfo.Hub.Length);
             var hub = Instantiate(locationInfo.Hub[hubIndex]);
-            _grid.Fill(mainDoor.Position + mainDoor.transform.forward * _grid.CellSize / 2);
+            _grid.Fill(locationInfo.Hub[hubIndex].RoomCells.GetCells(locationInfo.Hub[hubIndex].name), mainDoor.Position, mainDoor.transform.rotation);
             hub.transform.forward = mainDoor.transform.forward;
             hub.transform.position = mainDoor.transform.position;
             doors.AddRange(hub.Exites);
@@ -33,35 +33,33 @@ namespace SweetDeal.Source.LocationGenerator
         
         bool GenerateRoom(LocationScriptableObject locationInfo, Door door, int count, List<Door> freeDoors, List<Room> rooms)
         {
-            
             int roomIndex = 0;
             Room room = null;
             if (count > freeDoors.Count)
             {
                 roomIndex = Random.Range(0, locationInfo.OneAndMoreDoors.Length);
-                var pos = door.Position + door.transform.forward * _grid.CellSize / 2;
-                if (!_grid.IsFree(pos))
+                var cellCenters = locationInfo.OneAndMoreDoors[roomIndex].RoomCells.GetCells(locationInfo.OneAndMoreDoors[roomIndex].name);
+                if (!_grid.IsFree(cellCenters, door.Position, door.transform.rotation))
                 {
                     return false;
                 }
                 else
                 {
-                    _grid.Fill(pos);
+                    _grid.Fill(cellCenters, door.Position,  door.transform.rotation);
                 }
                 
                 room = Instantiate(locationInfo.OneAndMoreDoors[roomIndex]);
             }
             else
             {
-                var pos = door.Position + door.transform.forward * _grid.CellSize / 2;
-                if (!_grid.IsFree(pos))
+                var cellCenters = locationInfo.NoDoors[roomIndex].RoomCells.GetCells(locationInfo.NoDoors[roomIndex].name);
+                if (!_grid.IsFree(cellCenters,  door.Position, door.transform.rotation))
                 {
-                    Destroy(door.gameObject);
                     return false;
                 }
                 else
                 {
-                    _grid.Fill(pos);
+                    _grid.Fill(cellCenters, door.Position, door.transform.rotation);
                 }
                 
                 roomIndex = Random.Range(0, locationInfo.NoDoors.Length);

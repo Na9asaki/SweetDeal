@@ -70,7 +70,7 @@ Transform:
   m_GameObject: {fileID: 1025636516829880224}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -102.55348, y: 0, z: 34.05242}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -100,6 +100,8 @@ MonoBehaviour:
   _cookiesSpawnPoints: []
   _lootCountsRange: {x: 0, y: 0}
   _minCookies: 0
+  <Collider>k__BackingField: {fileID: 6285368964459921042}
+  <RoomCells>k__BackingField: {fileID: 11400000, guid: 54ac0a0e0d361a74a9bea7744c8acacd, type: 2}
 --- !u!1 &1687502761726221190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,6 +1054,11 @@ PrefabInstance:
 --- !u!4 &3539396209396809061 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 18909760996641151, guid: c863f656782d099438e2f1ba789301c8, type: 3}
+  m_PrefabInstance: {fileID: 3557096356726961178}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &6285368964459921042 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 7378942998684240520, guid: c863f656782d099438e2f1ba789301c8, type: 3}
   m_PrefabInstance: {fileID: 3557096356726961178}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3650083860022631605

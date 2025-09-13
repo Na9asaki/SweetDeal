@@ -1072,7 +1072,7 @@ Transform:
   m_GameObject: {fileID: 6440717853960331213}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.76243, y: 6.86502, z: -43.33}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1149,6 +1149,8 @@ MonoBehaviour:
   _cookiesSpawnPoints: []
   _lootCountsRange: {x: 0, y: 0}
   _minCookies: 0
+  <Renderer>k__BackingField: {fileID: 8101713411015624071}
+  <RoomCells>k__BackingField: {fileID: 11400000, guid: 54ac0a0e0d361a74a9bea7744c8acacd, type: 2}
 --- !u!65 &490019765831504709
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4565,7 +4567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 18909760996641151, guid: c863f656782d099438e2f1ba789301c8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5.6316
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 18909760996641151, guid: c863f656782d099438e2f1ba789301c8, type: 3}
       propertyPath: m_LocalScale.z
@@ -4631,6 +4633,11 @@ PrefabInstance:
 --- !u!4 &6927729955132751592 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 18909760996641151, guid: c863f656782d099438e2f1ba789301c8, type: 3}
+  m_PrefabInstance: {fileID: 6946542817287813015}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8101713411015624071 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1155176119752847888, guid: c863f656782d099438e2f1ba789301c8, type: 3}
   m_PrefabInstance: {fileID: 6946542817287813015}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7545205823529149270

@@ -1439,7 +1439,7 @@ GameObject:
   - component: {fileID: 4173141903942452328}
   - component: {fileID: 7578570677864681222}
   m_Layer: 0
-  m_Name: 'Room_4_Depth_1 '
+  m_Name: 'Room_3_Depth_1 '
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1454,7 +1454,7 @@ Transform:
   m_GameObject: {fileID: 8549328654471130187}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -77.68, y: 0, z: -34.16}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1540,6 +1540,8 @@ MonoBehaviour:
   - {fileID: 7452927062134309434}
   _lootCountsRange: {x: 1, y: 2}
   _minCookies: 0
+  <Renderer>k__BackingField: {fileID: 525259753294262952}
+  <RoomCells>k__BackingField: {fileID: 11400000, guid: 54ac0a0e0d361a74a9bea7744c8acacd, type: 2}
 --- !u!65 &4173141903942452328
 BoxCollider:
   m_ObjectHideFlags: 0

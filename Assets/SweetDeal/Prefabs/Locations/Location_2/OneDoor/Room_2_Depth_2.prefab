@@ -984,6 +984,7 @@ MonoBehaviour:
   _cookiesSpawnPoints: []
   _lootCountsRange: {x: 3, y: 5}
   _minCookies: 0
+  collider: {fileID: 8018427899016425525}
 --- !u!65 &1133514088087885604
 BoxCollider:
   m_ObjectHideFlags: 0

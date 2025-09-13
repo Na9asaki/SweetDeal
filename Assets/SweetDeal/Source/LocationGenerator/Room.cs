@@ -6,6 +6,7 @@ using SweetDeal.Source.LocationGenerator;
 using SweetDeal.Source.LocationGenerator.Configs;
 using SweetDeal.Source.Stealth;
 using UnityEngine;
+using Grid = SweetDeal.Source.LocationGenerator.Grid;
 using Random = UnityEngine.Random;
 
 public class Room : MonoBehaviour
@@ -18,10 +19,11 @@ public class Room : MonoBehaviour
     [SerializeField] private Transform[] _cookiesSpawnPoints;
     [SerializeField] private Vector2Int _lootCountsRange;
     [SerializeField] private int _minCookies;
+    [field: SerializeField] public MeshRenderer Renderer { get; private set; }
+    [field: SerializeField] public RoomCellsSO RoomCells { get; private set; }
     
     public IEnumerable<Door> Exites => _exites;
     public Door Entry => _entry;
-    
     
     public void GenerateLoot(GeneratedLootDefinition generatedLootDefinition)
     {

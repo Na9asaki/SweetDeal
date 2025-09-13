@@ -675,6 +675,7 @@ MonoBehaviour:
   - {fileID: 1932762020400408708}
   _lootCountsRange: {x: 2, y: 3}
   _minCookies: 0
+  collider: {fileID: 6610318935740854068}
 --- !u!65 &5588410140535697120
 BoxCollider:
   m_ObjectHideFlags: 0

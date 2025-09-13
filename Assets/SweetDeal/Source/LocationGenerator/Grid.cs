@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace SweetDeal.Source.LocationGenerator
@@ -12,8 +13,37 @@ namespace SweetDeal.Source.LocationGenerator
         private static Vector3 endCorner;
         private static Vector3 startCorner;
         public static float cellSize;
+        public const int ROOM_CELL_SIZE = 5;
         
         private static bool[,] _grid;
+
+        private void OnDrawGizmos()
+        {
+            if (_grid == null) return;
+
+            // Пройдем по всем ячейкам
+            int rows = _grid.GetLength(0);
+            int cols = _grid.GetLength(1);
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    // Вычисляем позицию центра ячейки
+                    Vector3 cellCenter = startCorner + new Vector3(
+                        j * CellSize + CellSize / 2f,
+                        0f,
+                        i * CellSize + CellSize / 2f
+                    );
+
+                    // Цвет по значению ячейки
+                    Gizmos.color = _grid[i, j] ? Color.red : Color.green;
+
+                    // Рисуем куб размером cellSize
+                    Gizmos.DrawWireCube(cellCenter, new Vector3(CellSize, 0.1f, CellSize));
+                }
+            }
+        }
 
         public static Vector2Int WorldToGrid(Vector3 position)
         {
@@ -47,17 +77,26 @@ namespace SweetDeal.Source.LocationGenerator
             return new Vector2Int(y, x);
         }
 
-        public bool IsFree(Vector3 position)
+        public bool IsFree(Vector3[] position, Vector3 door, Quaternion doorRotation)
         {
-            var gridPosition = GetGridPosition(position);
-            if (_grid[gridPosition.x, gridPosition.y]) return false;
+            foreach (var pos in position)
+            {
+                var gridPosition = GetGridPosition(doorRotation * pos + door);
+                if (_grid[gridPosition.x, gridPosition.y])
+                {
+                    return false;
+                }
+            }
             return true;
         }
 
-        public void Fill(Vector3 position)
+        public void Fill(Vector3[] position, Vector3 door, Quaternion doorRotation)
         {
-            var gridPosition = GetGridPosition(position);
-            _grid[gridPosition.x, gridPosition.y] = true;
+            foreach (var pos in position)
+            {
+                var gridPosition = GetGridPosition(doorRotation * pos + door);
+                _grid[gridPosition.x, gridPosition.y] = true;
+            }
         }
 
         private void OnDestroy()

@@ -48,6 +48,17 @@
                 },
                 {
                     "name": "",
+                    "id": "c6efe574-ab9b-4eeb-a9e4-26777e10de51",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interaction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d3261c76-b823-4126-bb85-d8bd319c3a3d",
                     "path": "<Keyboard>/q",
                     "interactions": "",
@@ -59,8 +70,30 @@
                 },
                 {
                     "name": "",
+                    "id": "967478b0-5909-4c6d-90dd-15be17b7020d",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "InventoryChoose",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "6faab10a-1a7f-4aa8-8e05-aa051454383b",
                     "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gadget",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "607b0147-cddb-4512-a589-6321c00516ba",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
