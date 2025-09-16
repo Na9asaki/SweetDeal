@@ -17,34 +17,6 @@ namespace SweetDeal.Source.LocationGenerator
         
         private static bool[,] _grid;
 
-        private void OnDrawGizmos()
-        {
-            if (_grid == null) return;
-
-            // Пройдем по всем ячейкам
-            int rows = _grid.GetLength(0);
-            int cols = _grid.GetLength(1);
-
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < cols; j++)
-                {
-                    // Вычисляем позицию центра ячейки
-                    Vector3 cellCenter = startCorner + new Vector3(
-                        j * CellSize + CellSize / 2f,
-                        0f,
-                        i * CellSize + CellSize / 2f
-                    );
-
-                    // Цвет по значению ячейки
-                    Gizmos.color = _grid[i, j] ? Color.red : Color.green;
-
-                    // Рисуем куб размером cellSize
-                    Gizmos.DrawWireCube(cellCenter, new Vector3(CellSize, 0.1f, CellSize));
-                }
-            }
-        }
-
         public static Vector2Int WorldToGrid(Vector3 position)
         {
             var delta = position - startCorner;

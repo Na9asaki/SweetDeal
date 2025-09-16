@@ -158,9 +158,9 @@ Material:
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
-    - _Param_AO: 0.518
-    - _Param_Metalic: 0.584
-    - _Param_Roughness: 0.633
+    - _Param_AO: 0.471
+    - _Param_Metalic: 0.579
+    - _Param_Roughness: 0.545
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1

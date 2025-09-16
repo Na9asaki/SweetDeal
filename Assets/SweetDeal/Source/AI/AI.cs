@@ -9,7 +9,7 @@ using Grid = SweetDeal.Source.LocationGenerator.Grid;
 
 namespace SweetDeal.Source.AI
 {
-    public class AI : MonoBehaviour, INoiseListener, IStunned
+    public class AI : MonoBehaviour, IStunned
     {
         [SerializeField] private DeadZone deadZone;
         [SerializeField] private AnimationProvider animationProvider;
@@ -39,16 +39,6 @@ namespace SweetDeal.Source.AI
         {
             _construct.BehaviourMachine.Exit();
             GetComponent<NavMeshAgent>().isStopped = true;
-        }
-
-        public void Alert(Vector3 soundPosition)
-        {
-            var soundGridPos = Grid.WorldToGrid(soundPosition);
-            if (soundGridPos == _gridPosition)
-            {
-                _construct.Data.NoisePosition = soundPosition;
-                _construct.BehaviourMachine.EnterIn<FollowState>();
-            }
         }
 
         private IEnumerator StunRoutine(float time)

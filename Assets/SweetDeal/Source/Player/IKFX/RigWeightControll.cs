@@ -37,6 +37,12 @@ namespace SweetDeal.Source.Player.IKFX
             rightHandTargetIntersection.OnRelease -= DeactivateRightHandIK;
         }
 
+        private void Start()
+        {
+            DeactivateLeftHandIK();
+            DeactivateRightHandIK();
+        }
+
         private void Update()
         {
             leftHandProgress = Mathf.Lerp(leftHandProgress, leftTargetProgress, Time.deltaTime * speedTurnHand);
@@ -48,12 +54,12 @@ namespace SweetDeal.Source.Player.IKFX
             if (leftHandTargetIntersection.Position != null)
             {
                 leftTarget.position = leftHandTargetIntersection.Position.Value;
-                leftTarget.forward = leftHandTargetIntersection.Normal.Value;
+                leftTarget.up = -leftHandTargetIntersection.Normal.Value;
             }
             if (rightHandTargetIntersection.Position != null)
             {
                 rightTarget.position = rightHandTargetIntersection.Position.Value;
-                rightTarget.forward = rightHandTargetIntersection.Normal.Value;
+                rightTarget.up = -rightHandTargetIntersection.Normal.Value;
             }
         }
 
