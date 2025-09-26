@@ -22,8 +22,9 @@ namespace SweetDeal.Source.LocationGenerator
         
         void GenerateHub(LocationScriptableObject locationInfo, Door mainDoor, List<Door> doors)
         {
-            int hubIndex = Random.Range(0, locationInfo.Hub.Length);
+            int hubIndex = Random.Range(0, locationInfo.Hub.Count);
             var hub = Instantiate(locationInfo.Hub[hubIndex]);
+            Debug.Log(locationInfo.Hub[hubIndex].RoomCells.GetCells(locationInfo.Hub[hubIndex].name));
             _grid.Fill(locationInfo.Hub[hubIndex].RoomCells.GetCells(locationInfo.Hub[hubIndex].name), mainDoor.Position, mainDoor.transform.rotation);
             hub.transform.forward = mainDoor.transform.forward;
             hub.transform.position = mainDoor.transform.position;
@@ -33,37 +34,41 @@ namespace SweetDeal.Source.LocationGenerator
         
         bool GenerateRoom(LocationScriptableObject locationInfo, Door door, int count, List<Door> freeDoors, List<Room> rooms)
         {
+            
+            
+            
+            Debug.Log("Generating room");
             int roomIndex = 0;
             Room room = null;
             if (count > freeDoors.Count)
             {
-                roomIndex = Random.Range(0, locationInfo.OneAndMoreDoors.Length);
-                var cellCenters = locationInfo.OneAndMoreDoors[roomIndex].RoomCells.GetCells(locationInfo.OneAndMoreDoors[roomIndex].name);
-                if (!_grid.IsFree(cellCenters, door.Position, door.transform.rotation))
+                var canPlace = _grid
+                    .CanPlace(door.Position, door.transform.forward, locationInfo.OneAndMoreDoors);
+                if (canPlace.Count == 0)
                 {
+                    Debug.Log("No room found");
                     return false;
                 }
-                else
-                {
-                    _grid.Fill(cellCenters, door.Position,  door.transform.rotation);
-                }
-                
-                room = Instantiate(locationInfo.OneAndMoreDoors[roomIndex]);
+                Debug.Log("Placing room");
+                roomIndex = Random.Range(0, canPlace.Count);
+                var cellCenters = canPlace[roomIndex].RoomCells.GetCells(canPlace[roomIndex].name);
+                _grid.Fill(cellCenters, door.Position,  door.transform.rotation);
+                room = Instantiate(canPlace[roomIndex]);
             }
             else
             {
-                var cellCenters = locationInfo.NoDoors[roomIndex].RoomCells.GetCells(locationInfo.NoDoors[roomIndex].name);
-                if (!_grid.IsFree(cellCenters,  door.Position, door.transform.rotation))
+                var canPlace = _grid
+                    .CanPlace(door.Position, door.transform.forward, locationInfo.NoDoors);
+                if (canPlace.Count == 0)
                 {
+                    Debug.Log("No room found");
                     return false;
                 }
-                else
-                {
-                    _grid.Fill(cellCenters, door.Position, door.transform.rotation);
-                }
-                
-                roomIndex = Random.Range(0, locationInfo.NoDoors.Length);
-                room = Instantiate(locationInfo.NoDoors[roomIndex]);
+                Debug.Log("Placing room");
+                roomIndex = Random.Range(0, canPlace.Count);
+                var cellCenters = canPlace[roomIndex].RoomCells.GetCells(canPlace[roomIndex].name);
+                _grid.Fill(cellCenters, door.Position,  door.transform.rotation);
+                room = Instantiate(canPlace[roomIndex]);
             }
                 
             room.transform.forward = door.transform.forward;
@@ -75,6 +80,7 @@ namespace SweetDeal.Source.LocationGenerator
             Destroy(door.gameObject);
             room.Entry.Activate();
             return true;
+            
         }
 
         void GenerateExit(LocationScriptableObject locationInfo, Door door)
@@ -103,14 +109,13 @@ namespace SweetDeal.Source.LocationGenerator
 
             while (count > 0)
             {
+                Debug.Log("Generating dungeon");
                 int nextDoor = Random.Range(0, freeDoors.Count);
                 Door door =  freeDoors[nextDoor];
                 freeDoors.RemoveAt(nextDoor);
-                if (GenerateRoom(locationInfo, door, count, freeDoors, _rooms))
-                {
-                    Debug.Log("Room generated");
-                    count--;
-                }
+                GenerateRoom(locationInfo, door, count, freeDoors, _rooms);
+                count--;
+                Debug.Log($"Room generated: {count}");
 
                 if (freeDoors.Count == 1 || count == 1)
                 {
