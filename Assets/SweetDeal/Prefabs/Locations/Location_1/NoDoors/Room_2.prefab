@@ -57,8 +57,7 @@ MonoBehaviour:
   _lootSpawnPoints:
   - {fileID: 4802406779310198123}
   _cookiesSpawnPoints: []
-  _lootCountsRange: {x: 0, y: 0}
-  _minCookies: 0
+  _minCookies: 1
   <Floor>k__BackingField: {fileID: 56630036771471223}
   <DoorOffset>k__BackingField: {x: 1, y: 1}
   <RoomCells>k__BackingField: {fileID: 11400000, guid: 54ac0a0e0d361a74a9bea7744c8acacd, type: 2}
@@ -416,6 +415,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_A (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7378942998684240520, guid: c863f656782d099438e2f1ba789301c8, type: 3}
     m_RemovedGameObjects: []
@@ -478,6 +481,10 @@ PrefabInstance:
     - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
       propertyPath: m_Name
       value: Tile_A (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7378942998684240520, guid: c863f656782d099438e2f1ba789301c8, type: 3}
@@ -776,6 +783,10 @@ PrefabInstance:
     - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
       propertyPath: m_Name
       value: Tile_A (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7378942998684240520, guid: c863f656782d099438e2f1ba789301c8, type: 3}
@@ -1124,6 +1135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_A (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7378942998684240520, guid: c863f656782d099438e2f1ba789301c8, type: 3}
     m_RemovedGameObjects: []
@@ -1186,6 +1201,10 @@ PrefabInstance:
     - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
       propertyPath: m_Name
       value: Tile_A (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7378942998684240520, guid: c863f656782d099438e2f1ba789301c8, type: 3}
@@ -1390,6 +1409,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_A (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7378942998684240520, guid: c863f656782d099438e2f1ba789301c8, type: 3}
     m_RemovedGameObjects: []
@@ -1530,6 +1553,10 @@ PrefabInstance:
     - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
       propertyPath: m_Name
       value: Tile_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7378942998684240520, guid: c863f656782d099438e2f1ba789301c8, type: 3}

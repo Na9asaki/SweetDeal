@@ -134,7 +134,6 @@ namespace SweetDeal.Source.LocationGenerator
                 }
             }
 
-            Debug.Log($"CanPlace: depth={depth}, left={minLeft}, right={minRight}, candidates={result.Count}");
             return result;
         }
 

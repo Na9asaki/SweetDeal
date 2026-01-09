@@ -42,9 +42,11 @@ namespace SweetDeal.Source.Player
             float baseRunSpeed = _thirdPersonController.SprintSpeed;
             _thirdPersonController.MoveSpeed = 0;
             _thirdPersonController.SprintSpeed = 0;
+            _thirdPersonController.enabled = false;
             yield return new WaitForSeconds(timeStun);
             _thirdPersonController.MoveSpeed = baseSpeed;
             _thirdPersonController.SprintSpeed = baseRunSpeed;
+            _thirdPersonController.enabled = true;
             _coroutine = null;
         }
 

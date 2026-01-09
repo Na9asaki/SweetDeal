@@ -265,7 +265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1782392047945263833}
   - component: {fileID: 8427441359946321669}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,8 +376,7 @@ MonoBehaviour:
   _lootSpawnPoints:
   - {fileID: 8402776917482024846}
   _cookiesSpawnPoints: []
-  _lootCountsRange: {x: 0, y: 0}
-  _minCookies: 0
+  _minCookies: 1
   <Floor>k__BackingField: {fileID: 8427441359946321669}
   <DoorOffset>k__BackingField: {x: 1, y: 1}
   <RoomCells>k__BackingField: {fileID: 11400000, guid: 54ac0a0e0d361a74a9bea7744c8acacd, type: 2}
@@ -585,6 +584,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_A (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7378942998684240520, guid: c863f656782d099438e2f1ba789301c8, type: 3}
     m_RemovedGameObjects: []
@@ -647,6 +650,10 @@ PrefabInstance:
     - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
       propertyPath: m_Name
       value: Tile_A (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7378942998684240520, guid: c863f656782d099438e2f1ba789301c8, type: 3}
@@ -711,6 +718,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_A (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7378942998684240520, guid: c863f656782d099438e2f1ba789301c8, type: 3}
     m_RemovedGameObjects: []
@@ -773,6 +784,10 @@ PrefabInstance:
     - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
       propertyPath: m_Name
       value: Tile_A (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7378942998684240520, guid: c863f656782d099438e2f1ba789301c8, type: 3}
@@ -1055,6 +1070,10 @@ PrefabInstance:
     - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
       propertyPath: m_Name
       value: Tile_A (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7378942998684240520, guid: c863f656782d099438e2f1ba789301c8, type: 3}
@@ -1409,6 +1428,10 @@ PrefabInstance:
     - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
       propertyPath: m_Name
       value: Tile_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7378942998684240520, guid: c863f656782d099438e2f1ba789301c8, type: 3}
@@ -2522,6 +2545,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_A (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7378942998684240520, guid: c863f656782d099438e2f1ba789301c8, type: 3}
     m_RemovedGameObjects: []
@@ -2863,6 +2890,10 @@ PrefabInstance:
     - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
       propertyPath: m_Name
       value: Tile_A (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 795165706614100933, guid: c863f656782d099438e2f1ba789301c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7378942998684240520, guid: c863f656782d099438e2f1ba789301c8, type: 3}

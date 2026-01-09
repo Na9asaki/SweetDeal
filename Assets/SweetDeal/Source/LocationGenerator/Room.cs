@@ -14,7 +14,6 @@ public class Room : MonoBehaviour
 
     [SerializeField] private Transform[] _lootSpawnPoints;
     [SerializeField] private Transform[] _cookiesSpawnPoints;
-    [SerializeField] private Vector2Int _lootCountsRange;
     [SerializeField] private int _minCookies;
     [field: SerializeField] public BoxCollider Floor { get; private set; }
     [field: SerializeField] public Vector2Int DoorOffset { get; private set; }
@@ -31,7 +30,7 @@ public class Room : MonoBehaviour
         
         List<Vector3>  cookiesPositions = _cookiesSpawnPoints.Select(x => x.position).ToList();
         
-        int lootCount = Random.Range(_lootCountsRange.x, _lootCountsRange.y + 1);
+        int lootCount = Random.Range(_minCookies, _lootSpawnPoints.Length);
         for (int i = 0; i < lootCount; i++)
         {
             if (lootPositions.Count == 0) break;
